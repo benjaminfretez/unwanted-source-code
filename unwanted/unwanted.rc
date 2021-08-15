@@ -91,11 +91,11 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON1               ICON                    "C:\\Users\\OEM\\Desktop\\Dev\\cpp\\unwanted\\unwanted\\bsod.ico"
+IDI_ICON1               ICON                    "C:\\Users\\OEM\\Desktop\\Dev\\cpp\\unwanted-virus\\unwanted\\bsod.ico"
 
-IDI_ICON2               ICON                    "C:\\Users\\OEM\\Desktop\\Dev\\cpp\\unwanted\\unwanted\\Apple.ico"
+IDI_ICON2               ICON                    "C:\\Users\\OEM\\Desktop\\Dev\\cpp\\unwanted-virus\\unwanted\\Apple.ico"
 
-IDI_ICON3               ICON                    "C:\\Users\\OEM\\Desktop\\Dev\\cpp\\unwanted\\unwanted\\unnmd.ico"
+IDI_ICON3               ICON                    "C:\\Users\\OEM\\Desktop\\Dev\\cpp\\unwanted-virus\\unwanted\\unnmd.ico"
 
 #endif    // Spanish (Spain, International Sort) resources
 /////////////////////////////////////////////////////////////////////////////
