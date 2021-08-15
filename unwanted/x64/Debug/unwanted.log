@@ -1,0 +1,12 @@
+﻿  main.cpp
+C:\Users\OEM\Desktop\Dev\cpp\unwanted\unwanted\main.cpp(742,46): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\OEM\Desktop\Dev\cpp\unwanted\unwanted\main.cpp(928,349): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+  
+unwanted.rc(94): error RC2135: file not found: C:\Users\OEM\Desktop\bsod.ico
+  
+  
+unwanted.rc(96): error RC2135: file not found: C:\Users\OEM\Desktop\Apple.ico
+  
+  
+unwanted.rc(98): error RC2135: file not found: C:\Users\OEM\Desktop\unnmd.ico
+  
