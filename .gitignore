@@ -1,0 +1,6 @@
+*.suo
+*.db
+*.ipch
+*.tlog
+*.iobj
+*.ipdb

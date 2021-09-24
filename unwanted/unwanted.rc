@@ -65,9 +65,9 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "0c0904b0"
+        BLOCK "080904b0"
         BEGIN
-            VALUE "CompanyName", "BenjaminFretez "
+            VALUE "CompanyName", "null"
             VALUE "FileDescription", "Úñåáñþéð ß¾®ü’"
             VALUE "FileVersion", "2.0.666.0"
             VALUE "InternalName", "unwanted.exe"
@@ -79,7 +79,7 @@ BEGIN
     END
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "Translation", 0xc09, 1200
+        VALUE "Translation", 0x809, 1200
     END
 END
 

