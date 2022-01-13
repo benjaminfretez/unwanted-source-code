@@ -55,6 +55,13 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
     int argc;
     LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
     if (argc > 1) {
+        // TEST
+        if (!lstrcmpW(argv[1], L"wts")) {
+            //WriteToString(); 
+            return 0;
+        }
+
+        // POS
         if (!lstrcmpW(argv[1], L"createdesktopfiles")) {
             CreateDesktopFiles(); // Create Desktop Files
             return 0;
@@ -154,18 +161,15 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
         }
         if (!lstrcmpW(argv[1], L"changetext")) {
             if (MessageBoxA(hwnd,
-                "This payload is considered semi-harmful.\r\nThis means, it should be safe to use, but can still cause data loss or other things you might not want.\r\n\r\n\
-If you have productive data on your system or signed in to online accounts, it is recommended to run this payload inside a \
-virtual machine in order to prevent potential data loss or changed things you might not want.\r\n\r\n\
-Do you still want to enable it?",
-"Úñåáñþéð ß¾®ü’ - ChangeText payload", MB_YESNO | MB_ICONWARNING) != IDYES) {
+                "unrecommended - continue?",
+"Úñåáñþéð ß¾®ü’- 'ctp'", MB_YESNO | MB_ICONWARNING) != IDYES) {
                 ExitProcess(0);
             }
             CreateThread(NULL, NULL, &payloadThread, &payloadChangeText, NULL, NULL);
 
             MessageBox(
                 NULL,
-                (LPCWSTR)L"Click OK for end `changetext` mode", // Warning message box
+                (LPCWSTR)L"end `changetext`?", // Warning message box
                 (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                 MB_ICONERROR | MB_OK
             );
@@ -175,7 +179,7 @@ Do you still want to enable it?",
             CreateThread(NULL, NULL, &payloadThread, &MoveDesktopIcons, NULL, NULL);
             MessageBox(
                 NULL,
-                (LPCWSTR)L"Click OK for end `deskicomov` mode", // Warning message box
+                (LPCWSTR)L"end `deskicomov`?", // Warning message box
                 (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                 MB_ICONERROR | MB_OK
             );
