@@ -24,9 +24,7 @@ This malware causes data loss, it **may** affect personal or important data...
 
 * **Passwörd of the file:** "*J4d'X4D;y&2$SdM" (without quotes)
 
-* **Size of the executable (ver 1.1):** 405 KB
-
-* **Size of the executable (ver 1.0):** 252 KB
+* **For see all the releases:** Click [Here](https://github.com/benjaminfretez/unwanted-source-code/releases)
 
 * **Versions of Windows tested:** Windows 7 to 11 (most tested in 10)
 
