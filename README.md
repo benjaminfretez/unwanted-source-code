@@ -186,7 +186,13 @@ If user selects no, the next message shows up:
 
 
 ## Bugs
+2
+=======
+### information
+**version:** 3.0.666.0
 
+**build:** 2.0
+>>>>>>> 72aeecf3947695a9afd6138e3f1eea57085126bc
 If you find any other, you can create an issue.
 
 ### Rarely (at 3rd step) stops
