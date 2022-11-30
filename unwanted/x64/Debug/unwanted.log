@@ -1,5 +1,3 @@
 ﻿  main.cpp
-C:\Users\OEM\Desktop\Dev\cpp\unwanted-virus\unwanted\main.cpp(75,16): warning C4102: 'warning': unreferenced label
-C:\Users\OEM\Desktop\Dev\cpp\unwanted-virus\unwanted\main.cpp(206,22): warning C4102: 'DownloadFiles': unreferenced label
 MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-C:\Users\OEM\Desktop\Dev\cpp\unwanted-virus\x64\Debug\unwanted.exe : fatal error LNK1120: 1 unresolved externals
+C:\Users\OEM\Escritorio\Dev\cpp\unwanted-virus\x64\Debug\unwanted.exe : fatal error LNK1120: 1 unresolved externals

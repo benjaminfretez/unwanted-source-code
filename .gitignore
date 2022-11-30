@@ -6,8 +6,9 @@
 *.iobj
 *.ipdb
 
-.vs
-aRelease
-Release
-unwanted_bak
-
+.vs/*
+aRelease/*
+Release/*
+unwanted_bak/*
+unwanted/Release/*
+unwanted/x64/*
