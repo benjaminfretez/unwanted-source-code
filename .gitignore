@@ -5,3 +5,7 @@
 *.tlog
 *.iobj
 *.ipdb
+
+.vs
+aRelease
+Release
