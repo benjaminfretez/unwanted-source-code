@@ -12,3 +12,4 @@ Release/*
 unwanted_bak/*
 unwanted/Release/*
 unwanted/x64/*
+*/Debug/*
