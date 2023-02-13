@@ -4,7 +4,7 @@
 |   Unwanted Virus Source Code               |
 |   data program "data.h"                    |
 |                                            |
-|   (C) BenjaminFretez 2021.                 |
+|   (C) BenjaminFretez 2021-2023             |
 |                                            |
 +--------------------------------------------*/
 

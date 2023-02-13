@@ -3,7 +3,7 @@
 |   Unwanted Virus Source Code               |
 |   main program "main.cpp"                  |
 |                                            |
-|   (C) BenjaminFretez 2021.                 |
+|   (C) BenjaminFretez 2021-2023             |
 |                                            |
 +--------------------------------------------*/
 
