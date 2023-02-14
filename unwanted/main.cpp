@@ -433,7 +433,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int startmsg = MessageBox(
                     NULL,
                     (LPCWSTR)L"Are you sure to run this program?", // Warning message box
-                    (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨",
+                    (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                     MB_ICONWARNING | MB_YESNO
                 );
 
@@ -444,7 +444,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                     MessageBox(
                         NULL,
                         (LPCWSTR)L"Sorry, but we cannot found the command interpreter so we cannot continue running this program, press OK to continue", // Warning message box
-                        (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨 - Program Error",
+                        (LPCWSTR)L"Úñåáñþéð ß¾®ü’ - Program Error",
                         MB_ICONERROR | MB_OK
                     );
                     return 1;
@@ -474,7 +474,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int startmsg = MessageBox(
                     NULL,
                     (LPCWSTR)L"Are you sure to run this program?", // Warning message box
-                    (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨",
+                    (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                     MB_ICONWARNING | MB_YESNO
                 );
                 // In case you just press yes or no is the same
@@ -493,7 +493,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                 int startmsg = MessageBox(
                     NULL,
                     (LPCWSTR)L"Are you sure to run this program?", // Warning message box
-                    (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨",
+                    (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                     MB_ICONWARNING | MB_YESNO
                 );
 
@@ -505,7 +505,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
                     int startmsg = MessageBox(
                         NULL,
                         (LPCWSTR)L"OK, you missed the fun...",
-                        (LPCWSTR)L"😀😁😎😎🤔😣😱🥵😳😨",
+                        (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
                         MB_ICONINFORMATION | MB_OK
                     );
                     NoUnwanted0();
