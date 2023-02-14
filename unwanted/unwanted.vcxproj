@@ -184,7 +184,10 @@
     <Image Include="..\..\..\..\bsod.ico" />
     <Image Include="..\..\..\..\unnmd.ico" />
     <Image Include="Apple.ico" />
+    <Image Include="bsod - copia.ico" />
     <Image Include="bsod.ico" />
+    <Image Include="icon1.ico" />
+    <Image Include="icon3.ico" />
     <Image Include="unnmd.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
