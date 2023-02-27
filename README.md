@@ -24,7 +24,7 @@ This malware causes data loss, it **may** affect personal or important data...
 
 * **Passwörd of the file:** "*J4d'X4D;y&2$SdM" (without quotes)
 
-* **For see all the releases:** Click [Here](https://github.com/benjaminfretez/unwanted-source-code/releases)
+* **For see all the releases:** Click [Here](https://github.com/benjaminfretez/unwantedexe-malware)
 
 * **Versions of Windows tested:** Windows 7 to 11 (most tested in 10)
 
