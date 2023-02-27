@@ -34,7 +34,7 @@ const size_t unfm_len = sizeof(unfm);
 const unsigned char diem[] = "ÜÓÚ ÑÉÉĞ ŞÓ ĞÍÉÉÉÉ²¼2ğ¤ú®¥½ö’«   ÜÓÚ ÑÉEĞ TÓ ĞÍÉ YOU NEED TO DIEÉÉÉ aáaááá €€¼€³¤²¤¤¬²¬\r\ntwíşşe®@Enderµañ©h@#RT#$tş¤³ş³å³äs³®É F3¤€Ş³TÅ®¤ÅŞ€ÜÉÜWŞÜÉ€Ü¤\r\n WHY ARE YOU RUNNING? WHY ARE YOU RUNNING? ÁÄÉ³ÁÅÅÁÅAÁÄÉ®Ü¼Ú¼½Íthesdjdefe¾»¬»«¥®²³ŞÄ³®";
 const size_t die_len = sizeof(diem);
 
-const unsigned char lastm[] = "ÜÓÚ\n YOU COMPUTER WILL DIE IN 10 SECONDS äøóøğ¥¾³®²®¤³Ş\r\n³€ŞÜ¤¼€ÚÉ6YE³\r\n®²¤Ş¤€Ü¼Ú€¤Ş¤€Ş¤\r\n³é³å²€Ş¤\r\n\r\n\r\ndisgraceful";
+const unsigned char lastm[] = "ÜÓÚ\n YOU COMPUTER WILL DIE IN 10 SECONDS €¤ÜŞÅ³®²®¤³Ş\r\n³€ŞÜ¤Wé nééğ á ñéwc ímputyer guys¼€ÚÉ6YE³\r\n®²¤Ş¤€Ü¼Ú€Time is over, you killed it!¤Ş¤€Ş¤\r\n³é³å²€Ş¤";
 const size_t last_len = sizeof(lastm);
 
 const unsigned char escapem[] = "Hey! The escape is behind you,\r\nLook behind you please, Is there!!";
