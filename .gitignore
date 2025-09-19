@@ -17,3 +17,5 @@ x86/Debug/*
 
 *.exe
 *.zip
+/unwanted/Debug
+/Debug
