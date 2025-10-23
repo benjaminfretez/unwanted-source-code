@@ -25,7 +25,7 @@ using namespace std;
 DWORD wb;
 
 /* files content */
-const unsigned char msg[] = "Hello! You have ran the called �������d ����� (Unwanted Virus)\r\n\r\nYour computer is now done for anyway,\r\nkilling Unwanted.exe process will not do anything, just it rewrited the MBR...\r\nYour ETA is 2 minutes, THE TIME IS RUNNING! =)";
+const unsigned char msg[] = "Hello! You have ran the called �������d ����� (Unwanted Virus)\r\n\r\nYour computer is now done for anyway,\r\nkilling Unwanted.exe process will not do anything, it's just rewrited the MBR...\r\nYour ETA is 2 minutes, THE TIME IS RUNNING! =)";
 const size_t msg_len = sizeof(msg);
 
 const unsigned char unfm[] = "you have found a way for end me, but I will come back and kill you\r\nand your family see me next time when... ** cough cough ** when����s�xw���\r\n�'���� ** dies ** \n...\r\n";
@@ -39,6 +39,60 @@ const size_t last_len = sizeof(lastm);
 
 const unsigned char escapem[] = "Hey! The escape is behind you,\r\nLook behind you please, Is there!!";
 const size_t escape_len = sizeof(escapem);
+
+const wchar_t* MISDISTRIB = L"Whoops! I might have misdistributed the Test Version of the program!\r\nMust keep an eye on myself and make sure the attributes are set correctly\r\n\r\nThis Version is limited, making my experiment safe for the Company.";
+const wchar_t* MISDISTRIB_TITLE = L"Misdistributed Test Version";
+const wchar_t* LOSTITSJOKE = L"Unwanted Virus has lost its joke payload\r\n\r\nPlease contact the developer to fix this issue";
+const wchar_t* LOSTITSJOKE_TITLE = L"Joke Payload Missing";
+const wchar_t* EXECNAMEDIFF = L"The executable name has been changed!\r\n\r\nPlease do not change the executable name of Unwanted Virus, this can cause issues running the program correctly.";
+const wchar_t* EXECNAMEDIFF_TITLE = L"Executable Name Changed";
+const wchar_t* NOTNORMALPC = L"This is not a normal computer";
+const wchar_t* MADNESS = L"2¤³@»¬¬²’ÐÅ¶²Øß2¶¡";
+const wchar_t* MAINWARNING = L"Are you sure to run this program?";
+const wchar_t* PROGRAMERROR = L"Sorry, but we cannot found the command interpreter so we cannot continue running this program, press OK to continue";
+const wchar_t* ONLYIDIOTS = L"ONLY IDIOTS CLICK NO!";
+const wchar_t* DISABLESECURITYWARNING = L"Windows security will be disable this can be dangerous to your system that means if you press yes everything goes to s³€ð\r\n\r\nTHIS ALSO IS IMPOSSIBLE TO UNDO, PLEASE THINK WHAT ARE YOU GOING TO DO!";
+const wchar_t* DISABLEPOWEROPTIONSWARNING = L"This payload is very harmful to use, this changes registry values to make you computer unusable anymore\r\n\r\nAre you sure to continue?";
+const wchar_t* OTHERUSERWARNING = L"This payload is very harmful to use, this means you cannot relogin again on your computer\r\n\r\nAre you sure to continue?";
+const wchar_t* ABUSEPREVENTION = L"Stop pressing OK!";
+const wchar_t* FATALERROR = L"The system is not fully installed. Please run setup again";
+const wchar_t* ALPHASPAM = L"AAAAAAAAAAAAAAAAA";
+const wchar_t* MSGSPECIAL[]{
+    L"Now I will terminate your system",
+    L"Stop Pressing OK!",
+    L"u need to die",
+    L"don't press ok",
+    L"run away",
+    L"Something Happened",
+    L"Что-то произошло",
+    L"What the hell I have done?",
+    L"My Computer",
+    L"ur crazy!!!!",
+    L"WHY ARE YOU RUNNING? WHY ARE YOU RUNNING?",
+    L"uR crazy bro u cannot run the unwanted virus",
+    L"0_o",
+    L"ahahahahaah",
+    L"run away",
+	L"ur crazy, u ran unwanted virus"
+	L"Interactive sign-in process initialization has failed.\n\nPlease check the event log for details.",
+    L"The system is not fully installed. Please run setup again",
+    L"An error has ocurred but the error message cannot be settleved due to another error",
+    L"The installation only supports Windows 98\r\nSetup will now exit",
+    L"Still using this computer?",
+	L"Unexpected error: 21.",
+	L"Something happened.",
+    L". > ██Ø██ê",
+	L"The file or directory C:\\$Secure is corrupt and unreadable. Please run chkdsk utility.",
+	L"Ready to reinstall Windows?",
+	L"Sign in process initialization failure",
+    L"The system is not fully installed. Please run setup again",
+	L"Windows Message",
+	L"unwanted.exe - Application Error",
+	L"dwwin.exe - Application Error",
+    L"Insert AtR█¶█¼ disk in drive A:"
+	L"Your password must be at least 18770 characters and cannot repeat any of your previous 30689 passwords. Please type a different password. Type a password that meets these requirements in both text boxes",
+};
+
 
 /* links to download files */
 

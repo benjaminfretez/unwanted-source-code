@@ -190,6 +190,9 @@
     <Image Include="icon3.ico" />
     <Image Include="unnmd.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="MISDISTRIB.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

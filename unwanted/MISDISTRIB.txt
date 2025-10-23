@@ -1,0 +1,130 @@
+MISDISTRIB
+Whoops! I might have misdistributed the Test Version of the program!\r\nMust keep an eye on myself and make sure the attributes are set correctly\r\n\r\nThis Version is limited, making my experiment safe for the Company.
+
+OTHERUSER
+This payload is very harmful to use, this means you cannot relogin again on your computer\r\n\r\nAre you sure to continue?
+
+NOTNORMALPC
+This is not a normal computer
+
+MAINWARN
+Are you sure to run this program?
+
+SYSTERMIN
+Now I will terminate your system
+
+ABUSEPREV
+Stop Pressing OK!
+
+ALPHASPAM
+AAAAAAAA
+
+MISSEDOPPO
+OK, you missed the fun...
+
+IDIOTKWIM
+ONLY IDIOTS CLICK NO!
+
+NOTCMDFOUND
+Sorry, We couldn't find your command interpreter\r\nSo we cannot continue running this program,\r\n\r\nPress OK to continue.
+
+PLEASEWAIT
+Please wait the so warm final payload is finished\r\nUntil then you can still using your computer =)
+
+UNKNOWNHRAD
+Unknown hard error
+
+MSGBOXPAY
+AHHHHHHHHH WTF IS HAPPENING???
+
+ur crazy, u ran unwanted virus
+
+run away
+
+u need to die
+
+An error has ocurred but the error message cannot be settleved due to another error
+
+Something Happened
+
+Interactive sign-in process initialization has failed.\n\nPlease check the event log for details.
+
+Что-то произошло
+
+don't press ok
+
+Ready to reinstall Windows?
+
+What the hell I have done?
+
+The installation only supports Windows 98\r\nSetup will now exit
+
+You do not have permission to view or edit the current permission settings for Documents, but you can take ownership or change auditing settings.
+
+.>██Ø██ê
+
+ÿ
+
+Still using this computer?
+
+lol
+
+Unexpected error: 21
+
+Cannot run program
+
+Мой Компьютер
+
+Stop clicking Ok
+
+uR crazy bro u cannot run the unwanted virus
+
+0_o
+
+The system is not fully installed. Please run setup again
+
+Windows Message
+
+Microsoft Windows
+
+The application was unable to start correctly (0xc000029A) Click OK to close the application
+
+Error reading drive AB:
+
+Error
+
+Your password must be at least 18770 characters and cannot repeat any of your previous 30689 passwords. Please type a different password. Type a password that meets these requirements in both text boxes
+
+Insert AtR█¶█¼ disk in drive A:
+
+Access Denied
+
+Idiot who press ok
+
+Windows Firewall can't change some of your settings.\r\nError code: 0x80070424
+
+Windows Firewall
+
+Error writing to Log\r\nSee log for more Information: µ:\\log.txt
+
+Device driver software was not installed.
+
+The sign-in process couldn't display security and sign-in\noptions when Ctrl+Alt+Delete was pressed. If Windows\ndoesn't respond, press Esc, or use the power switch to\nrestart.
+
+Failure to display security and shut down options
+
+Windows Firewall
+
+Device driver software was not installed.
+
+You are an idiot!
+
+The application falied to initialize properly (0xc00000005). Click OK to terminate the application
+
+dwwin.exe - Application Error
+
+unwanted.exe - Application Error
+
+The file or directory C:\\$Secure is corrupt and unreadable. Please run chkdsk utility.
+
+Winlogon generic control dialog: winlogon.exe - Corrupt File

