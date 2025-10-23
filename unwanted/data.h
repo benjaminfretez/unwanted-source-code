@@ -46,6 +46,7 @@ const wchar_t* LOSTITSJOKE = L"Unwanted Virus has lost its joke payload\r\n\r\nP
 const wchar_t* LOSTITSJOKE_TITLE = L"Joke Payload Missing";
 const wchar_t* EXECNAMEDIFF = L"The executable name has been changed!\r\n\r\nPlease do not change the executable name of Unwanted Virus, this can cause issues running the program correctly.";
 const wchar_t* EXECNAMEDIFF_TITLE = L"Executable Name Changed";
+const wchar_t* MISSEDOPPO = L"OK, you missed the fun...";
 const wchar_t* NOTNORMALPC = L"This is not a normal computer";
 const wchar_t* MADNESS = L"2¤³@»¬¬²’ÐÅ¶²Øß2¶¡";
 const wchar_t* MAINWARNING = L"Are you sure to run this program?";
