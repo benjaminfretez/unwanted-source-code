@@ -19,3 +19,7 @@ x86/Debug/*
 *.zip
 /unwanted/Debug
 /Debug
+
+*/desktop.ini
+/*/desktop.ini
+/unwanted/desktop.ini
